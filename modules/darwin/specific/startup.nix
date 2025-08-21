@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  system.startup = {
+    chime = true;
+  };
+}
