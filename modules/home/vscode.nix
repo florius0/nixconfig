@@ -15,8 +15,6 @@
           version = "4.31.0";
           sha256 = "sha256-ZS47eAKQBHB2ijNlMu1sVN/3U3vT7E7AMdC/9HN4uCg=";
         }
-        # Unused theme
-        # { publisher = "aimebertrand"; name = "timu-macos-vscode"; version = "1.0.2"; sha256 = "sha256-3Pz/u272faq0yLJUCjvnk84GN+9Ln/MzEJCqxEiEDvY="; }
         {
           publisher = "alanrynne";
           name = "ifc-syntax";
@@ -83,8 +81,6 @@
           version = "1.4.0";
           sha256 = "sha256-InEfF1X7AgtsV47h8WWq5DZh6k/wxYhl2r/pLZz9JbU=";
         }
-        # Unused theme
-        # { publisher = "cyriacduchatenet"; name = "monterey-dark-theme"; version = "1.0.0"; sha256 = "sha256-dEnv5FrqS+m8/1GSTSZWWuNspJS40KeUbaeq0HOaPiU="; }
         {
           publisher = "dart-code";
           name = "dart-code";
@@ -121,11 +117,6 @@
           version = "2.5.1";
           sha256 = "sha256-ZwBNvbld8P1mLcKS7iHDqzxc8T6P1C+JQy54+6E3new=";
         }
-        # Broken on modern VSCode
-        # { publisher = "drcika"; name = "apc-extension"; version = "0.4.1"; sha256 = "sha256-fq2qlxc7+MpwkraVClB0FGsR0K1/2MTzQ0SYULMx4Kg="; }
-        # Fails for no reason
-        # error: builder for '/nix/store/ibq62ipwgjk04rdli98lmakcmfclsahn-vscode-extension-drmerfy-overtype-0.5.0.drv' failed with exit code 1
-        # { publisher = "drmerfy"; name = "overtype"; version = "0.5.0"; sha256 = "sha256-aiaQu818XZDtWCxFof/h9l1UqxEKgiM+FYPuVDr9bgY="; }
         {
           publisher = "eamodio";
           name = "gitlens";
@@ -144,8 +135,6 @@
           version = "1.7.4";
           sha256 = "sha256-9wgnm/KHXWcFaibuzdxZHRJ0MAbIWQYGe6plJgKP21M=";
         }
-        # Unused theme
-        # { publisher = "eliverlara"; name = "andromeda"; version = "1.8.2"; sha256 = "sha256-ur+zXuKluJ0DZS5/S4RaomibnJuFy4SE4tk9i+9+ORc="; }
         {
           publisher = "foxundermoon";
           name = "shell-format";
@@ -164,8 +153,6 @@
           version = "0.17.1121";
           sha256 = "sha256-oJ1trQou2q4RoRO3bI8VbCUGEZ0RwJNPj/MZSP6bewE=";
         }
-        # Unused theme
-        # { publisher = "github"; name = "github-vscode-theme"; version = "6.3.5"; sha256 = "sha256-dOadoYBPcYrpzmqOpJwG+/nPwTfJtlsOFDU3FctdR0o="; }
         {
           publisher = "github";
           name = "remotehub";
@@ -214,27 +201,17 @@
           version = "1.6.6";
           sha256 = "sha256-SPcSnS7LnRL5gdiJIVsFaN7eccrUHSj9uQYIQZllm0M=";
         }
-        # Unused theme
-        # { publisher = "hoovercj"; name = "vscode-power-mode"; version = "3.0.2"; sha256 = "sha256-ZE+Dlq0mwyzr4nWL9v+JG00Gllj2dYwL2r9jUPQ8umQ="; }
-        # Unused theme
-        # { publisher = "hsnazar"; name = "hyper-term-theme"; version = "0.3.0"; sha256 = "sha256-EIRsvvjns3FX4fTom3hHtQALEnaWf+jxakza2HTyPcw="; }
-        # Unused extension
-        # { publisher = "humao"; name = "rest-client"; version = "0.25.1"; sha256 = "sha256-DSzZ9wGB0IVK8gYOzLLbT03WX3xSmR/IUVZkDzcczKc="; }
-        # Unused theme
-        # { publisher = "illixion"; name = "vscode-vibrancy-continued"; version = "1.1.44"; sha256 = "sha256-1oEfnS7BBKPJ9cSu05S6GQsN76nk5JW7aBq/2O8raSY="; }
         {
           publisher = "ipedrazas";
           name = "kubernetes-snippets";
           version = "0.1.9";
           sha256 = "sha256-BlPEzRSe2NfRPjyShepa2DEhe1Jgiq7bXk2ze3eqwT0=";
         }
-        # Unused theme
-        # { publisher = "jackpaget"; name = "gruvbox-glass"; version = "0.4.1"; sha256 = "sha256-uxWMBJS6Ui+AGKD/zpkIzrAruMDvhzdMqQuHVAa7wKM="; }
         {
           publisher = "jakebecker";
           name = "elixir-ls";
-          version = "0.27.1";
-          sha256 = "sha256-QqQyNWkU4P0sJE9Hef9s84goIyN2g1326dDMz/P8UTU=";
+          version = "0.29.3";
+          sha256 = "sha256-cghDjgv3FWsNpnH6Pa9iPuiPOlLI/iucGH+fzF35ERk=";
         }
         {
           publisher = "james-yu";
@@ -284,8 +261,12 @@
           version = "1.3.1";
           sha256 = "sha256-1XS28VLbdSQjAAnCrvid/aE8GA2WReB9Roa6E3PqXi4=";
         }
-        # Unused theme
-        # { publisher = "mateocerquetella"; name = "xcode-12-theme"; version = "5.0.0"; sha256 = "sha256-rMVpn8bu2KTLyjEQIHYlwTDSCvMdMtM7J9EApXd9EBg="; }
+        {
+          publisher = "mateocerquetella";
+          name = "xcode-12-theme";
+          version = "5.0.0";
+          sha256 = "sha256-rMVpn8bu2KTLyjEQIHYlwTDSCvMdMtM7J9EApXd9EBg=";
+        }
         {
           publisher = "mattfoulks";
           name = "har-analyzer";
@@ -298,8 +279,6 @@
           version = "0.1.2";
           sha256 = "sha256-p3/3cfXIMeQVZ5zsWV3iAaZhIfXE2mR79IyV0f79hMQ=";
         }
-        # Unused theme
-        # { publisher = "monokai"; name = "theme-monokai-pro-vscode"; version = "2.0.6"; sha256 = "sha256-Dz5fsDNXr5KX6L4cQNm5NPykEd7HQvK4W4T4ZYNaUQg="; }
         {
           publisher = "mrorz";
           name = "language-gettext";
@@ -450,8 +429,6 @@
           version = "1.3.1";
           sha256 = "sha256-HbI0UdN8uwHS2MPH1SGZhxNaN18cWzjMyWYcgVE7FjY=";
         }
-        # Unused theme
-        # { publisher = "ms-vscode"; name = "cpptools-themes"; version = "2.0.0"; sha256 = "sha256-YWA5UsA+cgvI66uB9d9smwghmsqf3vZPFNpSCK+DJxc="; }
         {
           publisher = "ms-vscode";
           name = "hexeditor";
@@ -560,12 +537,6 @@
           version = "1.3.0";
           sha256 = "sha256-0g05H7uNXJSFaHWUlfWlh5CQV0UPPI2AFzJrt/p2OWY=";
         }
-        # Unused theme
-        # { publisher = "robbowen"; name = "synthwave-vscode"; version = "0.1.17"; sha256 = "sha256-kSBYSrS/6ySMO9WWpIRRtWgX1gZV1S8QGPOOBJ59AKo="; }
-        # Unused theme
-        # { publisher = "s3gf4ult"; name = "monokai-vibrant"; version = "0.5.3"; sha256 = "sha256-uh/yc8kmUW6hgNysQKcs3XPCtcR0o6qvshJM5tXFFws="; }
-        # Unused theme
-        # { publisher = "scivarolo"; name = "overthinking-theme"; version = "0.3.2"; sha256 = "sha256-fxg0rfZgHqQk0kO6VttrnL78oM5mby+Mhyge9T5Mkf0="; }
         {
           publisher = "shopify";
           name = "ruby-lsp";
@@ -758,8 +729,6 @@
           version = "2.2.8";
           sha256 = "sha256-efEeTq/y4al38Tdut3bHVdluf3tUYqc6CFPX+ch1gLg=";
         }
-        # Unused theme
-        # { publisher = "wart"; name = "ariake-dark"; version = "0.2.2"; sha256 = "sha256-/5xvA7RH+NEeKHBWUjXzUexohgbvP4QNWjR+M+5BXJU="; }
         {
           publisher = "wmaurer";
           name = "change-case";
