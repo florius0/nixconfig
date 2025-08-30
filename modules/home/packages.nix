@@ -36,6 +36,7 @@
 
     # Programming languages and tooling
     bun
+    delve
     dotnet-sdk
     elixir
     erlang
