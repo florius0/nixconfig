@@ -6,5 +6,5 @@ Built on top of https://github.com/juspay/nixos-unified-template with removal of
 
 ## Operating the Configuration
 
-1. `nix run .#apply` to apply the configuration
+1. `ENABLE_MASAPPS=1 nix run .#apply` to apply the configuration
 2. `nix run .#update` to update the dependencies

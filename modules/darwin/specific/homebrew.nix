@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   # Homebrew configuration
@@ -35,7 +35,7 @@
       "quicklookase"
     ];
 
-    masApps = {
+    masApps = lib.mkIf (builtins.getEnv "ENABLE_MASAPPS" == "1") {
       "Xcode" = 497799835;
       "FoXray" = 6448898396;
       "VKMessenger" = 6449223858;
