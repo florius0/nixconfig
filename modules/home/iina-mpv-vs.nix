@@ -2,7 +2,7 @@
 
 {
   programs.mpv = {
-    enable = true;
+    enable = false;
     package = pkgs.mpv-vs;
     config = {
       vo = "gpu-next";

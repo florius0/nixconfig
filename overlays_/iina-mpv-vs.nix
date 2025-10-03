@@ -16,23 +16,31 @@ final: prev: {
       ];
 
       # Do the swap inside the derivation so it’s reproducible
-      postInstall = (prevAttrs.postInstall or "") + ''
+      postFixup = (prevAttrs.postFixup or "") + ''
         set -euo pipefail
         app="$out/Applications/IINA.app"
         fw="$app/Contents/Frameworks"
 
-        echo ">>> iina-vs: replacing bundled libmpv with Nix libmpv (vapoursynth)"
+        # swap libmpv
         rm -f "$fw"/libmpv.* || true
         ln -s ${final.mpv-vs}/lib/libmpv.2.dylib "$fw/libmpv.2.dylib"
+        install_name_tool -id "@rpath/libmpv.2.dylib" "$fw/libmpv.2.dylib" || true
 
-        # Bundle libvapoursynth so dlopen works at runtime
+        # bundle libvapoursynth for lazy dlopen()
         if [ -e ${final.vapoursynth}/lib/libvapoursynth.dylib ]; then
           cp -f ${final.vapoursynth}/lib/libvapoursynth.dylib "$fw/libvapoursynth.dylib"
+          install_name_tool -id "@rpath/libvapoursynth.dylib" "$fw/libvapoursynth.dylib" || true
         fi
 
-        echo ">>> iina-vs: Frameworks contents"
-        /usr/bin/ls -l "$fw" | /usr/bin/sed -n '1,200p'
+        # rewrite any /nix/store deps to @rpath/<name> so they resolve in IINA's Frameworks
+        while IFS= read -r dep; do
+          base="$(basename "$dep")"
+          if [ -e "$fw/$base" ]; then
+            install_name_tool -change "$dep" "@rpath/$base" "$fw/libmpv.2.dylib" || true
+          fi
+        done < <(otool -L "$fw/libmpv.2.dylib" | awk '/^\t\/nix\/store\//{print $1}')
       '';
+
     }
   );
 }
