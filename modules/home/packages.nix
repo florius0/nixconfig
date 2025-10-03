@@ -33,6 +33,9 @@
 
     # Entertainment Tools
     iina-mpv-vs
+    vapoursynth
+    vulkan-loader
+    moltenvk
 
     # Programming languages and tooling
     bun
