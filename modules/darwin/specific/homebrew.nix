@@ -1,9 +1,42 @@
-{ lib, ... }:
-
 {
-  # Homebrew configuration
+  lib,
+  flake,
+  config,
+  pkgs,
+  ...
+}:
+
+let
+  inherit (flake) inputs;
+in
+{
+  imports = [
+    inputs.nix-homebrew.darwinModules.nix-homebrew
+  ];
+
+  nix-homebrew = {
+    enable = true;
+
+    enableRosetta = pkgs.stdenv.hostPlatform.isAarch64;
+
+    user = config.system.primaryUser;
+
+    taps = {
+      "homebrew/homebrew-core" = inputs.homebrew-core;
+      "homebrew/homebrew-cask" = inputs.homebrew-cask;
+      "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+    };
+
+    mutableTaps = false;
+    autoMigrate = true;
+  };
+
+  # Package management via nix-darwin’s Homebrew module
   homebrew = {
     enable = true;
+
+    # Keep taps in nix-darwin in sync with nix-homebrew (avoids drift):
+    taps = builtins.attrNames config.nix-homebrew.taps;
 
     brews = [
       # Entertainment Tools
