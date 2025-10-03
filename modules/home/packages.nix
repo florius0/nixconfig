@@ -32,7 +32,7 @@
     google-chrome
 
     # Entertainment Tools
-    iina
+    iina-mpv-vs
 
     # Programming languages and tooling
     bun
