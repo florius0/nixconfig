@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   system.defaults.dock = {
@@ -76,8 +76,8 @@
     ];
 
     persistent-others = [
-      "/Users/vadimtsvetkov/Documents"
-      "/Users/vadimtsvetkov/Downloads"
+      "/Users/${config.system.primaryUser}/Documents"
+      "/Users/${config.system.primaryUser}/Downloads"
     ];
   };
 }
