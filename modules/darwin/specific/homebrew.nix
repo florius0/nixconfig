@@ -41,6 +41,10 @@ in
     brews = [
       # Entertainment Tools
       "webtorrent-cli"
+
+      # Productivity Tools
+      "monolith"
+      "slackdump"
     ];
 
     casks = [

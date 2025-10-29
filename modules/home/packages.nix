@@ -44,7 +44,14 @@
     livebook
     nixfmt-rfc-style
     nodejs
-    python3
+    (python3.withPackages (ps: [
+      ps.pip
+      ps.pyaml
+      ps.atlassian-python-api
+      ps.requests
+      ps.playwright
+    ]))
+    playwright-driver.browsers
     shfmt
     tinymist
     typst
