@@ -52,6 +52,9 @@ in
       "orbstack"
       "hammerspoon"
 
+      # Encryption and security tools
+      "openvpn-connect"
+
       # Utility Tools
       "anydesk"
       "macs-fan-control"
