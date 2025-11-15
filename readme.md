@@ -6,5 +6,6 @@ Built on top of https://github.com/juspay/nixos-unified-template with removal of
 
 ## Operating the Configuration
 
-1. `ENABLE_MASAPPS=1 nix run .#apply` to apply the configuration
-2. `nix run .#update` to update the dependencies
+1. [Install Determinate Nix](https://determinate.systems/nix-installer/)
+2. `ENABLE_MASAPPS=1 nix run .#apply` to apply the configuration
+3. `nix flake update` to update the dependencies

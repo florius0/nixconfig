@@ -1,17 +1,18 @@
 { ... }:
 
 {
+  # Nix installation is managed by Determinate
+  nix.enable = false;
+
   nix.gc = {
-    automatic = true;
-    interval = {
-      Weekday = 0;
-      Hour = 2;
-      Minute = 0;
-    };
+    automatic = false;
     options = "--delete-older-than 30d";
   };
 
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 }
