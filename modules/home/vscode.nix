@@ -319,7 +319,7 @@
           publisher = "ms-dotnettools";
           name = "vscodeintellicode-csharp";
           version = "2.2.3";
-          sha256 = "sha256-8XIeK5AIFKQaK5YMNSRqxr5p72zXb7ZLPq6PbeWO864=";
+          sha256 = "sha256-E2KRzjIxLFmwArzEKittjejacrCOFFNNzphWw8v5CpE=";
         }
         {
           publisher = "ms-kubernetes-tools";

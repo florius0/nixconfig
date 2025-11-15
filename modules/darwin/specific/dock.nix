@@ -76,8 +76,22 @@
     ];
 
     persistent-others = [
-      "/Users/${config.system.primaryUser}/Documents"
-      "/Users/${config.system.primaryUser}/Downloads"
+      {
+        folder = {
+          path = "/Users/${config.system.primaryUser}/Documents";
+          arrangement = "name";
+          displayas = "stack";
+          showas = "grid";
+        };
+      }
+      {
+        folder = {
+          path = "/Users/${config.system.primaryUser}/Downloads";
+          arrangement = "date-added";
+          displayas = "stack";
+          showas = "grid";
+        };
+      }
     ];
   };
 }

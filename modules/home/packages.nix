@@ -88,7 +88,7 @@
     meslo-lgs-nf
     nerd-fonts.fira-code
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
 
     # Text and terminal utilities
     bash

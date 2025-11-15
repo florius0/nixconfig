@@ -3,7 +3,6 @@
 {
   programs.git = {
     enable = true;
-    delta.enable = true;
     lfs.enable = true;
 
     ignores = [
@@ -44,9 +43,11 @@
       # Linux
       "*.swp"
     ];
-    userName = config.me.username;
-    userEmail = config.me.email;
-    extraConfig = {
+
+    settings = {
+      user.name = config.me.username;
+      user.email = config.me.email;
+
       core.autocrlf = "input";
       help.autocorrect = 1;
       init.defaultBranch = "main";
