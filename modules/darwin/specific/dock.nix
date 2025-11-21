@@ -21,9 +21,6 @@
     expose-group-apps = true;
 
     persistent-apps = [
-      # Launchpad
-      { app = "/System/Applications/Launchpad.app"; }
-
       # Activity Monitor
       { app = "/System/Applications/Utilities/Activity Monitor.app"; }
 

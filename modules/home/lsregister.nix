@@ -9,7 +9,7 @@
   home.activation.registerHMApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     echo "Regenerating LaunchService Database..."
 
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -seed -r -domain local -domain system -domain user
+    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -seed -r -domain local -domain system -domain user
 
     /usr/bin/killall Dock || true
     /usr/bin/killall Finder || true
