@@ -143,18 +143,6 @@
         }
         {
           publisher = "github";
-          name = "copilot";
-          version = "1.250.0";
-          sha256 = "sha256-/+NeIxbNZH1nbjxzrfgU2dvToON5zDNzvZ4x3xzWfCo=";
-        }
-        {
-          publisher = "github";
-          name = "copilot-labs";
-          version = "0.17.1121";
-          sha256 = "sha256-oJ1trQou2q4RoRO3bI8VbCUGEZ0RwJNPj/MZSP6bewE=";
-        }
-        {
-          publisher = "github";
           name = "remotehub";
           version = "0.64.0";
           sha256 = "sha256-Nh4PxYVdgdDb8iwHHUbXwJ5ZbMruFB6juL4Yg/wdKMY=";
@@ -208,12 +196,6 @@
           sha256 = "sha256-BlPEzRSe2NfRPjyShepa2DEhe1Jgiq7bXk2ze3eqwT0=";
         }
         {
-          publisher = "jakebecker";
-          name = "elixir-ls";
-          version = "0.29.3";
-          sha256 = "sha256-cghDjgv3FWsNpnH6Pa9iPuiPOlLI/iucGH+fzF35ERk=";
-        }
-        {
           publisher = "james-yu";
           name = "latex-workshop";
           version = "10.7.4";
@@ -254,6 +236,12 @@
           name = "elixir-zigler";
           version = "0.1.0";
           sha256 = "sha256-ELmxthy6rO1IVmTQitbzh7M6e3EZr9CWhqkTF4UREh0=";
+        }
+        {
+          publisher = "lexical-lsp";
+          name = "lexical";
+          version = "0.0.24";
+          sha256 = "sha256-aAGReiVKkrTlQWyRpYIlBTRnn3Py38chHvCMmqTBtu0=";
         }
         {
           publisher = "lunuan";
@@ -484,6 +472,12 @@
           sha256 = "sha256-XC8hkUDuB57UZc2bjxrZZtoWnX4Qi+k4OFZbKYH5VKQ=";
         }
         {
+          publisher = "openai";
+          name = "chatgpt";
+          version = "0.4.46";
+          sha256 = "sha256-fR2jZILAyqImcEtiVc+wx8nSuBEcsenSK9ZYqVTq2JI=";
+        }
+        {
           publisher = "pgourlain";
           name = "erlang";
           version = "1.1.2";
@@ -556,12 +550,6 @@
           sha256 = "sha256-aOqdZYksIPhzWob9P4TrHd+M8v9YWohzuPEiAUI3opk=";
         }
         {
-          publisher = "sswg";
-          name = "swift-lang";
-          version = "1.12.0";
-          sha256 = "sha256-Dzf8mJCDWT2pHPJcTywEqnki8aVsMO92+wLQ4fjHzb8=";
-        }
-        {
           publisher = "stefanjarina";
           name = "vscode-eex-snippets";
           version = "0.0.8";
@@ -588,8 +576,8 @@
         {
           publisher = "swiftlang";
           name = "swift-vscode";
-          version = "2.0.2";
-          sha256 = "sha256-UO/ZWMJZwqA4IlUzbsgsymA/0/taa8AFrlwbnrUlIQ8=";
+          version = "2.14.1";
+          sha256 = "sha256-Pd9RJ4UuzoybhOJ0qVn0FKMI01OcX0ZrMHw5bfd1iog=";
         }
         {
           publisher = "sztheory";
@@ -668,18 +656,6 @@
           name = "learn-vim";
           version = "0.0.28";
           sha256 = "sha256-HAEKetNHUZ1HopGeQTqkrGUWZNFWD7gMaoTNbpxqI1Y=";
-        }
-        {
-          publisher = "visualstudioexptteam";
-          name = "intellicode-api-usage-examples";
-          version = "0.2.8";
-          sha256 = "sha256-aXAS3QX+mrX0kJqf1LUsvguqRxxC0o+jj1bKQteXPNA=";
-        }
-        {
-          publisher = "visualstudioexptteam";
-          name = "vscodeintellicode";
-          version = "1.3.1";
-          sha256 = "sha256-ZMNQQO1CyyQPg2WJgxKAuk/a1K1miGdCxCqZE0uFg34=";
         }
         {
           publisher = "visualstudiotoolsforunity";
@@ -878,17 +854,6 @@
         "chat.extensionTools.enabled" = true;
 
         # Programming Language Settings
-        ## Elixir & Erlang
-
-        "[elixir]" = {
-          "editor.defaultFormatter" = "JakeBecker.elixir-ls";
-        };
-
-        "elixirLS.enableTestLenses" = true;
-        "elixirLS.fetchDeps" = true;
-        "elixirLS.mixEnv" = "dev";
-        "erlang.codeLensEnabled" = true;
-
         ## Kubernetes & Helm
 
         "[helm]" = {
