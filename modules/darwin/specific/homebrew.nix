@@ -48,6 +48,10 @@ in
     ];
 
     casks = [
+      # Communication tools
+      "discord"
+      "slack"
+
       # Development Tools
       "orbstack"
       "hammerspoon"

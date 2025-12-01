@@ -38,8 +38,8 @@
       # Messengers
       { app = "/Applications/VK Мессенджер.app"; }
       { app = "/Applications/Telegram.app"; }
-      { app = "${pkgs.discord}/Applications/Discord.app"; }
-      { app = "${pkgs.slack}/Applications/Slack.app"; }
+      { app = "/Applications/Discord.app"; }
+      { app = "/Applications/Slack.app"; }
 
       # Spacer
       { spacer.small = true; }

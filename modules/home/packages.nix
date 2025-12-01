@@ -24,10 +24,6 @@
     postman
     websocat
 
-    # Communication Tools
-    discord
-    slack
-
     # Browsers
     google-chrome
 
