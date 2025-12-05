@@ -550,12 +550,6 @@
           sha256 = "sha256-aOqdZYksIPhzWob9P4TrHd+M8v9YWohzuPEiAUI3opk=";
         }
         {
-          publisher = "stefanjarina";
-          name = "vscode-eex-snippets";
-          version = "0.0.8";
-          sha256 = "sha256-1Qy5puUMwDdFxTAeKAf1RNW8+78klY7hRiNMGnSuF0k=";
-        }
-        {
           publisher = "stephanvs";
           name = "dot";
           version = "0.0.1";
@@ -716,12 +710,6 @@
           name = "markdown-all-in-one";
           version = "3.6.2";
           sha256 = "sha256-BIbgUkIuy8clq4G4x1Zd08M8k4u5ZPe80+z6fSAeLdk=";
-        }
-        {
-          publisher = "zerokol";
-          name = "vscode-eex-beautify";
-          version = "0.2.3";
-          sha256 = "sha256-mNKQDovXufkJ5/EZJetDeByXatWlYYL8Lu60eOtZKlo=";
         }
         {
           publisher = "ziglang";
