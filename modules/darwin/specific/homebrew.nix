@@ -80,14 +80,15 @@ in
     ];
 
     masApps = lib.mkIf (builtins.getEnv "ENABLE_MASAPPS" == "1") {
-      "Xcode" = 497799835;
-      "FoXray" = 6448898396;
-      "VKMessenger" = 6449223858;
       "AdBlockPro" = 1018301773;
-      "Telegram" = 747648890;
-      "Pages" = 409201541;
-      "Numbers" = 409203825;
+      "FoXray" = 6448898396;
       "Keynote" = 409183694;
+      "No Shorts: Blocker for YouTube" = 6502996298;
+      "Numbers" = 409203825;
+      "Pages" = 409201541;
+      "Telegram" = 747648890;
+      "VKMessenger" = 6449223858;
+      "Xcode" = 497799835;
     };
   };
 }
