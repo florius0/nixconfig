@@ -109,7 +109,6 @@
     tree
     unrar
     unzip
-    vitetris
     wget
     yq-go
   ];
