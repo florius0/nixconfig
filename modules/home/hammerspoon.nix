@@ -5,35 +5,74 @@
     --
     -- Hammerspoon Script to enforce the audio input.
     --
+    -- Behavior:
+    --   - Keep a priority-ordered list of preferred input devices
+    --   - Whenever audio devices change, pick the first available device
+    --   - If none of the preferred devices are connected, do nothing
+    --
     -- Useful documentation:
     --   https://www.hammerspoon.org/docs/hs.audiodevice.html
     --   https://www.hammerspoon.org/docs/hs.audiodevice.watcher.html
     --
 
-    local MICROPHONE_DEVICE_NAME = "MacBook Pro Microphone"
+    local MICROPHONE_DEVICE_PRIORITY = {
+        "fifine Microphone",
+        "MacBook Pro Microphone",
+    }
 
-    local log = hs.logger.new('init','debug')
-    log.i('Initializing')
+    local log = hs.logger.new("audio-input-priority", "debug")
+    log.i("Initializing")
 
-    function audioDeviceCallback(event)
-        log.f('audioDeviceCallback: "%s"', event)
-        if (event == "dIn ") then -- That trailing space is not a mistake
-            local defaultInputDevice = hs.audiodevice.defaultInputDevice()
-            log.f("Input device has changed to %s", defaultInputDevice)
-
-            local microphone = hs.audiodevice.findDeviceByName(MICROPHONE_DEVICE_NAME)
-            if (microphone ~= nil) then
-                log.i("Setting microphone to be the default again")
-                microphone:setDefaultInputDevice()
-            else
-                log.w("Microphone is not connected!")
+    local function getBestAvailableInputDevice()
+        for _, deviceName in ipairs(MICROPHONE_DEVICE_PRIORITY) do
+            local device = hs.audiodevice.findDeviceByName(deviceName)
+            if device ~= nil then
+                return device, deviceName
             end
         end
+        return nil, nil
+    end
+
+    local function ensurePreferredInputDevice()
+        local preferredDevice, preferredDeviceName = getBestAvailableInputDevice()
+
+        if preferredDevice == nil then
+            log.w("No preferred input devices are currently connected")
+            return
+        end
+
+        local currentInputDevice = hs.audiodevice.defaultInputDevice()
+        local currentInputDeviceName = currentInputDevice and currentInputDevice:name() or "<none>"
+
+        if currentInputDeviceName == preferredDeviceName then
+            log.i(string.format('Preferred input "%s" is already selected', preferredDeviceName))
+            return
+        end
+
+        log.i(string.format(
+            'Switching input from "%s" to preferred available device "%s"',
+            currentInputDeviceName,
+            preferredDeviceName
+        ))
+        preferredDevice:setDefaultInputDevice()
+    end
+
+    local function audioDeviceCallback(event)
+        log.f('audioDeviceCallback: "%s"', event)
+
+        -- Commonly useful to react to both device connection changes and input changes.
+        -- "dIn " = default input device changed
+        -- Other device events may also occur when hardware is plugged/unplugged,
+        -- so we simply re-evaluate on every callback.
+        ensurePreferredInputDevice()
     end
 
     hs.audiodevice.watcher.setCallback(audioDeviceCallback)
     hs.audiodevice.watcher.start()
 
-    log.i('Initialized!')
+    -- Enforce once at startup too
+    ensurePreferredInputDevice()
+
+    log.i("Initialized!")
   '';
 }
