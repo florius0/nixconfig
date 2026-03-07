@@ -838,6 +838,7 @@
         "githubPullRequests.pullBranch" = "never";
 
         # Copilot & AI Features
+        "github.copilot.enable" = false;
         "chat.agent.enabled" = true;
         "chat.extensionTools.enabled" = true;
 
