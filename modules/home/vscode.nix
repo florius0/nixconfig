@@ -136,6 +136,12 @@
           sha256 = "sha256-9wgnm/KHXWcFaibuzdxZHRJ0MAbIWQYGe6plJgKP21M=";
         }
         {
+          publisher = "ExpertLSP";
+          name = "expert";
+          version = "0.3.1";
+          sha256 = "sha256-+PS0gHfa9DeQWGXBwRdaK2Eo7gZcq3JQqcAyaTlJe+E=";
+        }
+        {
           publisher = "foxundermoon";
           name = "shell-format";
           version = "7.2.5";
@@ -236,12 +242,6 @@
           name = "elixir-zigler";
           version = "0.1.0";
           sha256 = "sha256-ELmxthy6rO1IVmTQitbzh7M6e3EZr9CWhqkTF4UREh0=";
-        }
-        {
-          publisher = "lexical-lsp";
-          name = "lexical";
-          version = "0.0.24";
-          sha256 = "sha256-aAGReiVKkrTlQWyRpYIlBTRnn3Py38chHvCMmqTBtu0=";
         }
         {
           publisher = "lunuan";
