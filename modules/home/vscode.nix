@@ -304,12 +304,6 @@
           sha256 = "sha256-1dwkkaGQC5CZjOmebzSSqkomhA0hOXiIv8jV+Vo8jcw=";
         }
         {
-          publisher = "ms-dotnettools";
-          name = "vscodeintellicode-csharp";
-          version = "2.2.3";
-          sha256 = "sha256-E2KRzjIxLFmwArzEKittjejacrCOFFNNzphWw8v5CpE=";
-        }
-        {
           publisher = "ms-kubernetes-tools";
           name = "vscode-kubernetes-tools";
           version = "1.3.18";
