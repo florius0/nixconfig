@@ -44,6 +44,9 @@
       # Spacer
       { spacer.small = true; }
 
+      # AI
+      { app = "${pkgs.chatgpt}/Applications/ChatGPT.app"; }
+
       # Browsers
       { app = "/System/Cryptexes/App/System/Applications/Safari.app"; }
       { app = "${pkgs.google-chrome}/Applications/Google Chrome.app"; }

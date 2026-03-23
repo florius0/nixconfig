@@ -73,18 +73,22 @@
     lens
     werf
 
-    # Media-related packages
-    dejavu_fonts
+    # 3D & Media tools
     exiftool
-    fd
-    ffmpeg_6
+    ffmpeg
+    imagemagick
+
+    # Other media packages
+    dejavu_fonts
     font-awesome
     hack-font
-    imagemagick
     meslo-lgs-nf
     nerd-fonts.fira-code
     noto-fonts
     noto-fonts-color-emoji
+
+    # AI
+    chatgpt
 
     # Text and terminal utilities
     bash
