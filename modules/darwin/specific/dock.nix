@@ -21,8 +21,9 @@
     expose-group-apps = true;
 
     persistent-apps = [
-      # Activity Monitor
+      # System & Hardware
       { app = "/System/Applications/Utilities/Activity Monitor.app"; }
+      { app = "/Applications/Audio Hijack.app"; }
 
       # Spacer
       { spacer.small = true; }
