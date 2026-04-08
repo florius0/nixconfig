@@ -89,6 +89,7 @@ in
       "Telegram" = 747648890;
       "VKMessenger" = 6449223858;
       "Xcode" = 497799835;
+      "Windows App" = 1295203466;
     };
   };
 }
