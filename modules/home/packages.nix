@@ -29,6 +29,7 @@
 
     # Entertainment Tools
     iina
+    ckan
 
     # Programming languages and tooling
     bun
@@ -38,7 +39,7 @@
     erlang
     go
     livebook
-    nixfmt-rfc-style
+    nixfmt
     nodejs
     (python3.withPackages (ps: [
       ps.pip
