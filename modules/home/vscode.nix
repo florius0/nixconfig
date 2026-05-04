@@ -276,8 +276,8 @@
         {
           publisher = "myriad-dreamin";
           name = "tinymist";
-          version = "0.13.12";
-          sha256 = "sha256-1mBzimFM/ntjL/d0YkoCds5MtXKwB52jzcHEWpx3Ggo=";
+          version = "0.14.16";
+          sha256 = "sha256-R4tlQgtQaXIT6qiBg1RqQB0Usnsj0Ijs2Bhn2J1CQq4=";
         }
         {
           publisher = "ms-azuretools";
