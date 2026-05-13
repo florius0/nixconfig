@@ -833,6 +833,7 @@
 
         # Copilot & AI Features
         "github.copilot.enable" = false;
+        "editor.inlineSuggest.enabled" = false;
         "chat.agent.enabled" = true;
         "chat.extensionTools.enabled" = true;
 
