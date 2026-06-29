@@ -110,6 +110,7 @@
     lf
     parallel
     ripgrep
+    smartmontools
     speedtest-cli
     tmux
     tree
