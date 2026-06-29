@@ -90,6 +90,7 @@
 
     # AI
     chatgpt
+    codex
 
     # Text and terminal utilities
     bash
