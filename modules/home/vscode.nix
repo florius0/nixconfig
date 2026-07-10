@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.vscode = {
@@ -885,7 +885,7 @@
 
         ## Shell
 
-        "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
+        "shellformat.path" = "${lib.getExe pkgs.shfmt}";
 
         ## XML
 
@@ -897,6 +897,7 @@
         "cSpell.language" = "en,ru";
 
         # Miscellaneous
+        "todo-tree.ripgrep.ripgrep" = "${lib.getExe pkgs.ripgrep}";
         "redhat.telemetry.enabled" = false;
         "polacode.transparentBackground" = true;
         "terminal.integrated.enableVisualBell" = true;
