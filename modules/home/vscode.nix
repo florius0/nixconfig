@@ -831,6 +831,8 @@
         "git.autofetch" = true;
         "git.confirmSync" = false;
         "git.enableSmartCommit" = true;
+        "diffEditor.ignoreTrimWhitespace" = false;
+        "scm.diffDecorationsIgnoreTrimWhitespace" = false;
         "gitlens.statusBar.enabled" = false;
         "gitlens.views.branches.avatars" = false;
         "gitlens.plusFeatures.enabled" = false;
