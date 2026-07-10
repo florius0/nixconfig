@@ -28,6 +28,12 @@
           sha256 = "sha256-lxx5NyIxxSowqK5Dmg4ABxyKkjBzSNlNE+K59NHoLag=";
         }
         {
+          publisher = "archicionado";
+          name = "cornifer";
+          version = "2.1.0";
+          sha256 = "sha256-sllNzfh/98YTsRgkDzYhswl4dn478788IxNscYIY6BY=";
+        }
+        {
           publisher = "atlassian";
           name = "atlascode";
           version = "3.4.11";
