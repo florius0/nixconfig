@@ -91,6 +91,7 @@
     # AI
     chatgpt
     codex
+    ollama
 
     # Text and terminal utilities
     bash
