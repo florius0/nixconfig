@@ -472,12 +472,6 @@
           sha256 = "sha256-XC8hkUDuB57UZc2bjxrZZtoWnX4Qi+k4OFZbKYH5VKQ=";
         }
         {
-          publisher = "openai";
-          name = "chatgpt";
-          version = "0.4.46";
-          sha256 = "sha256-fR2jZILAyqImcEtiVc+wx8nSuBEcsenSK9ZYqVTq2JI=";
-        }
-        {
           publisher = "pgourlain";
           name = "erlang";
           version = "1.1.2";
