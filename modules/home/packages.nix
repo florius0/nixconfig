@@ -16,7 +16,6 @@
     glow
     grpcurl
     iterm2
-    jdk21
     jira-cli-go
     lazygit
     pandoc
