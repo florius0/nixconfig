@@ -736,6 +736,7 @@
         };
         "workbench.editor.showIcons" = false;
         "workbench.editor.tabActionLocation" = "left";
+        "workbench.startupEditor" = "none";
         "security.workspace.trust.enabled" = false;
 
         # Theme & UI
@@ -827,11 +828,15 @@
         "git.enableSmartCommit" = true;
         "diffEditor.ignoreTrimWhitespace" = false;
         "scm.diffDecorationsIgnoreTrimWhitespace" = false;
+        "scm.defaultViewMode" = "tree";
         "gitlens.statusBar.enabled" = false;
         "gitlens.views.branches.avatars" = false;
         "gitlens.plusFeatures.enabled" = false;
         "githubPullRequests.fileListLayout" = "tree";
         "githubPullRequests.pullBranch" = "never";
+
+        # Search
+        "search.tree.defaultViewMode" = "tree";
 
         # Copilot & AI Features
         "github.copilot.enable" = false;
