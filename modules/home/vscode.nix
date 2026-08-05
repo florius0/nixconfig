@@ -720,28 +720,30 @@
       ];
 
       userSettings = {
-        # General Configuration
+        # Updates
         "update.mode" = "none";
-        "window.titleBarStyle" = "native";
-        "window.customTitleBarVisibility" = "never";
-        "window.commandCenter" = false;
+        "extensions.autoUpdate" = "off";
+
+        # General Configuration
+        "breadcrumbs.showEditorType" = true;
         "editor.detectIndentation" = false;
-        "editor.tabSize" = 2;
-        "editor.indentSize" = "tabSize";
         "editor.formatOnSave" = true;
+        "editor.indentSize" = "tabSize";
         "editor.largeFileOptimizations" = false;
+        "editor.tabSize" = 2;
         "files.autoSaveDelay" = 200;
         "files.exclude" = {
           "**/*.meta" = true;
         };
+        "security.workspace.trust.enabled" = false;
+        "window.commandCenter" = false;
+        "window.customTitleBarVisibility" = "never";
+        "window.titleBarStyle" = "native";
         "workbench.editor.showIcons" = false;
         "workbench.editor.tabActionLocation" = "left";
         "workbench.startupEditor" = "none";
-        "security.workspace.trust.enabled" = false;
 
         # Theme & UI
-        "workbench.colorTheme" = "MacOS Modern Dark - Ventura Xcode Default";
-        "workbench.iconTheme" = "macos-modern-big-sur-icon-theme";
         "editor.tokenColorCustomizations" = {
           textMateRules = [
             {
@@ -778,6 +780,8 @@
             }
           ];
         };
+        "workbench.colorTheme" = "MacOS Modern Dark - Ventura Xcode Default";
+        "workbench.iconTheme" = "macos-modern-big-sur-icon-theme";
 
         # Font Configuration
         "editor.fontFamily" = "'FiraCode Nerd Font', 'SF Mono', Menlo, Monaco, 'Courier New', monospace";
@@ -787,23 +791,23 @@
         "editor.lineHeight" = 17;
 
         # Error Highlighting & Minimap
-        "editor.renderLineHighlight" = "all";
-        "editor.unicodeHighlight.ambiguousCharacters" = false;
         "editor.minimap.enabled" = false;
         "editor.minimap.renderCharacters" = false;
         "editor.minimap.showSlider" = "always";
         "editor.overviewRulerBorder" = false;
+        "editor.renderLineHighlight" = "all";
+        "editor.unicodeHighlight.ambiguousCharacters" = false;
 
         # Color Customization
         "workbench.colorCustomizations" = {
-          "editorError.foreground" = "#e4545460";
-          "editorWarning.foreground" = "#ff942f60";
-          "editorInfo.foreground" = "#00b7e460";
-          "editorHint.foreground" = "#17a2a260";
           "editorError.background" = "#e4545460";
-          "editorWarning.background" = "#ff942f60";
-          "editorInfo.background" = "#00b7e460";
+          "editorError.foreground" = "#e4545460";
           "editorHint.background" = "#17a2a260";
+          "editorHint.foreground" = "#17a2a260";
+          "editorInfo.background" = "#00b7e460";
+          "editorInfo.foreground" = "#00b7e460";
+          "editorWarning.background" = "#ff942f60";
+          "editorWarning.foreground" = "#ff942f60";
           "terminal.background" = "#00000000";
         };
 
@@ -823,26 +827,28 @@
         "terminal.integrated.lineHeight" = 1.23;
 
         # Git & GitHub
+        "diff.mnemonicPrefix" = true;
+        "diffEditor.ignoreTrimWhitespace" = false;
         "git.autofetch" = true;
         "git.confirmSync" = false;
         "git.enableSmartCommit" = true;
-        "diffEditor.ignoreTrimWhitespace" = false;
-        "scm.diffDecorationsIgnoreTrimWhitespace" = false;
-        "scm.defaultViewMode" = "tree";
-        "gitlens.statusBar.enabled" = false;
-        "gitlens.views.branches.avatars" = false;
-        "gitlens.plusFeatures.enabled" = false;
         "githubPullRequests.fileListLayout" = "tree";
         "githubPullRequests.pullBranch" = "never";
+        "gitlens.plusFeatures.enabled" = false;
+        "gitlens.statusBar.enabled" = false;
+        "gitlens.views.branches.avatars" = false;
+        "scm.defaultViewMode" = "tree";
+        "scm.diffDecorationsIgnoreTrimWhitespace" = false;
 
         # Search
         "search.tree.defaultViewMode" = "tree";
 
         # Copilot & AI Features
-        "github.copilot.enable" = false;
-        "editor.inlineSuggest.enabled" = false;
         "chat.agent.enabled" = true;
         "chat.extensionTools.enabled" = true;
+        "chat.agentHost.enabled" = true;
+        "editor.inlineSuggest.enabled" = false;
+        "github.copilot.enable" = false;
 
         # Programming Language Settings
         ## Kubernetes & Helm
@@ -896,10 +902,10 @@
         "cSpell.language" = "en,ru";
 
         # Miscellaneous
-        "todo-tree.ripgrep.ripgrep" = "${lib.getExe pkgs.ripgrep}";
-        "redhat.telemetry.enabled" = false;
         "polacode.transparentBackground" = true;
+        "redhat.telemetry.enabled" = false;
         "terminal.integrated.enableVisualBell" = true;
+        "todo-tree.ripgrep.ripgrep" = "${lib.getExe pkgs.ripgrep}";
       };
 
       keybindings = [
