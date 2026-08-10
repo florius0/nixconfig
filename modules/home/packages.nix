@@ -92,6 +92,7 @@
     claude-code
     codex
     ollama
+    pi-coding-agent
 
     # Text and terminal utilities
     bash
