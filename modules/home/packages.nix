@@ -89,6 +89,7 @@
 
     # AI
     chatgpt
+    claude-code
     codex
     ollama
 
