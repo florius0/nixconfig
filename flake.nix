@@ -32,6 +32,9 @@
     # Software inputs
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    # APM and oh-my-pi (omp) are supplied by the agent-tools flake.
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   # Wired using https://nixos-unified.org/autowiring.html
