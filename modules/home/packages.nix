@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ flake, pkgs, ... }:
 
 {
   # Nix packages to install to $HOME
@@ -91,6 +91,7 @@
     chatgpt
     claude-code
     codex
+    flake.inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.omp
     ollama
     pi-coding-agent
 
