@@ -28,6 +28,20 @@
     };
 
     initContent = ''
+      # Let Nix authenticate GitHub fetches with the token managed by `gh`.
+      # Keep it in the shell environment rather than writing it to nix.conf.
+      if (( $+commands[gh] )); then
+        __github_token=$(gh auth token --hostname github.com 2>/dev/null)
+        if [[ -n "$__github_token" ]]; then
+          if [[ -n "$NIX_CONFIG" ]]; then
+            export NIX_CONFIG="$NIX_CONFIG"$'\n'"access-tokens = github.com=$__github_token"
+          else
+            export NIX_CONFIG="access-tokens = github.com=$__github_token"
+          fi
+        fi
+        unset __github_token
+      fi
+
       __fzf() {
         fzf --reverse --multi "$@"
       }
