@@ -8,13 +8,10 @@
 
 let
   inherit (lib)
-    concatStringsSep
-    getExe
     mapAttrsToList
     mkEnableOption
     mkIf
     mkOption
-    optionalString
     types
     ;
 
@@ -84,87 +81,10 @@ let
     path != ""
     && !(lib.hasPrefix "/" path)
     && !(builtins.any (part: part == "..") (lib.splitString "/" path));
-
-  fetchedSource =
-    name: package:
-    if package.src != null then
-      package.src
-    else if package.source.type == "github" then
-      pkgs.fetchFromGitHub {
-        inherit (package.source)
-          owner
-          repo
-          rev
-          hash
-          ;
-        name = "apm-source-${name}";
-      }
-    else
-      pkgs.fetchgit {
-        inherit (package.source) url rev hash;
-        name = "apm-source-${name}";
-      };
-
-  normalizedPackages = mapAttrsToList (
-    name: package:
-    let
-      source = fetchedSource name package;
-      packagePath = lib.removePrefix "./" package.path;
-    in
-    {
-      inherit name source packagePath;
-      root = if packagePath == "." then source else "${source}/${packagePath}";
-    }
-  ) cfg.packages;
-
-  yaml = pkgs.formats.yaml { };
-  manifest = yaml.generate "apm.yml" {
-    name = "nix-managed-agent-environment";
-    version = "1.0.0";
-    targets = cfg.targets;
-    dependencies.apm = map (package: { path = package.root; }) normalizedPackages;
+  bundle = pkgs.callPackage ../../../packages/apm-bundle/builder.nix {
+    apmPackage = cfg.package;
+    inherit (cfg) packages targets compileRootContext;
   };
-
-  bundle =
-    pkgs.runCommand "nix-managed-apm-bundle"
-      {
-        nativeBuildInputs = [ cfg.package ];
-      }
-      ''
-        set -eu
-
-        work="$TMPDIR/apm-work"
-        home="$TMPDIR/home"
-        mkdir -p "$work" "$home" "$TMPDIR/cache"
-        export HOME="$home"
-        export XDG_CONFIG_HOME="$home/.config"
-        export XDG_DATA_HOME="$home/.local/share"
-        export XDG_CACHE_HOME="$TMPDIR/cache"
-        mkdir -p "$HOME/.apm"
-
-        cp ${manifest} "$work/apm.yml"
-        cd "$work"
-        ${getExe cfg.package} install \
-          --only apm \
-          --target ${lib.escapeShellArg (concatStringsSep "," cfg.targets)} \
-          --root "$work"
-
-        ${optionalString cfg.compileRootContext ''
-          ${getExe cfg.package} compile \
-            --target ${lib.escapeShellArg (concatStringsSep "," cfg.targets)} \
-            --root "$work"
-        ''}
-
-        # Keep only immutable primitive trees. APM's lockfile, module cache,
-        # synthetic HOME, hooks, MCP files, and broad harness settings stay out.
-        mkdir -p "$out/.agents/skills" "$out/.codex/agents" "$out/.codex/prompts"
-        [ ! -d "$work/.agents/skills" ] || cp -R "$work/.agents/skills/." "$out/.agents/skills/"
-        [ ! -d "$work/.codex/agents" ] || cp -R "$work/.codex/agents/." "$out/.codex/agents/"
-        [ ! -d "$work/.codex/prompts" ] || cp -R "$work/.codex/prompts/." "$out/.codex/prompts/"
-        ${optionalString cfg.compileRootContext ''
-          [ ! -f "$work/AGENTS.md" ] || cp "$work/AGENTS.md" "$out/AGENTS.md"
-        ''}
-      '';
 
   hasSkillsTarget = builtins.elem "agent-skills" cfg.targets || builtins.elem "codex" cfg.targets;
   hasCodexTarget = builtins.elem "codex" cfg.targets;
@@ -248,15 +168,3 @@ in
     ];
   };
 }
-
-# Example:
-# programs.apm.packages.frontend-design = {
-#   source = {
-#     type = "github";
-#     owner = "anthropics";
-#     repo = "skills";
-#     rev = "<exact commit>";
-#     hash = "sha256-<fixed-output-hash>";
-#   };
-#   path = "skills/frontend-design";
-# };
