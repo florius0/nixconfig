@@ -397,7 +397,7 @@ in
           --delimiter : \
           --preview "$(__preview {2} {1})" \
           --preview-window '+{2}' \
-          --bind 'enter:accept' --print0 | tr -d '\0')
+          --bind 'enter:accept' --print0 | tr -d '\0' | sed -E 's/^(.+:[0-9]+:[0-9]+):.*$/\1/')
 
         [[ -n "$result" ]] && LBUFFER+="$result"
         zle reset-prompt
