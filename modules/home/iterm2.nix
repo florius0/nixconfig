@@ -380,6 +380,13 @@
     	<false/>
     	<key>GlobalKeyMap</key>
     	<dict>
+    		<key>0x24-0x20000-0x0</key>
+    		<dict>
+    			<key>Action</key>
+    			<integer>11</integer>
+    			<key>Text</key>
+    			<string>0x1b 0x5b 0x31 0x33 0x3b 0x32 0x75</string>
+    		</dict>
     		<key>0x19-0x60000</key>
     		<dict>
     			<key>Action</key>
