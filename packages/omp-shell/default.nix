@@ -1,28 +1,21 @@
-{
-  writeShellScriptBin,
-  writeTextFile,
-  symlinkJoin,
-  python3,
-}:
+{ lib, writeTextFile, role ? [ ], model ? [ ] }:
 
 let
-  bin = writeShellScriptBin "omp-shell" ''
-    exec ${python3}/bin/python3 ${./omp-shell.py} "$@"
-  '';
-
-  # Zsh integration: one private omp-shell RPC process per shell and
-  # project, bound to `:`/`:<role>`/`:c` at the prompt. Depends on `omp`,
-  # `omp-shell`, `fzf`, and `jq` being on PATH at runtime.
-  zshIntegration = writeTextFile {
-    name = "omp-shell-zsh-integration";
-    destination = "/share/omp-shell/omp-shell.zsh";
-    text = builtins.readFile ./omp-shell.zsh;
-  };
+  prefix = "?";
+  alias = name: command: "alias ${lib.escapeShellArg name}=${lib.escapeShellArg command}";
+  modelAliases = map (name: alias "${prefix}${name}" "omp --model ${name}") model;
+  roleAliases = map (name: alias "${prefix}${name}" "omp --model @${name}") role;
 in
-symlinkJoin {
-  name = "omp-shell";
-  paths = [
-    bin
-    zshIntegration
-  ];
+writeTextFile {
+  name = "omp-shell-zsh-integration";
+  destination = "/share/omp-shell/omp-shell.zsh";
+  text = lib.concatStringsSep "\n" (
+    [
+      (alias prefix "omp -p")
+      (alias "${prefix}c" "omp --continue")
+      (alias "${prefix}continue" "omp --continue")
+    ]
+    ++ modelAliases
+    ++ roleAliases
+  ) + "\n";
 }

@@ -1,7 +1,27 @@
 { config, flake, pkgs, ... }:
 
+let
+  ompShell = pkgs.callPackage ../../packages/omp-shell {
+    role = [
+      "smol"
+      "slow"
+      "plan"
+      "task"
+      "commit"
+      "designer"
+      "vision"
+      "advisor"
+      "tiny"
+    ];
+    model = [
+      "qwen-coding"
+      "gemma-fast"
+      "gemma-general"
+    ];
+  };
+in
 {
-  home.packages = [ flake.self.packages.${pkgs.stdenv.hostPlatform.system}.omp-shell ];
+  home.packages = [ ompShell ];
 
   programs.zsh = {
     enable = true;
@@ -45,7 +65,7 @@
       fi
 
       source "${flake.self.packages.${pkgs.stdenv.hostPlatform.system}.zsh-fzf-search}/share/zsh-fzf-search/search-widgets.zsh"
-      source "${flake.self.packages.${pkgs.stdenv.hostPlatform.system}.omp-shell}/share/omp-shell/omp-shell.zsh"
+      source "${ompShell}/share/omp-shell/omp-shell.zsh"
     '';
-  };
+};
 }
