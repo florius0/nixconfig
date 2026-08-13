@@ -61,7 +61,7 @@
       # Dev tools
       { app = "/Applications/Xcode.app"; }
       { app = "${pkgs.vscode}/Applications/Visual Studio Code.app"; }
-      { app = "${pkgs.iterm2}/Applications/iTerm2.app"; }
+      { app = "${pkgs.ghostty-bin}/Applications/Ghostty.app"; }
       { app = "/Applications/OrbStack.app"; }
 
       # Spacer

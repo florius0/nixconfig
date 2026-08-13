@@ -66,6 +66,8 @@ in
 
       source "${flake.self.packages.${pkgs.stdenv.hostPlatform.system}.zsh-fzf-search}/share/zsh-fzf-search/search-widgets.zsh"
       source "${ompShell}/share/omp-shell/omp-shell.zsh"
+      # Make Cmd+Backspace delete from cursor to line start.
+      bindkey -M emacs '^U' backward-kill-line
     '';
 };
 }
