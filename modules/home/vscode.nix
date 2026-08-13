@@ -818,7 +818,7 @@
 
         # Terminal Configuration
         "terminal.explorerKind" = "external";
-        "terminal.external.osxExec" = "iTerm2.app";
+        "terminal.external.osxExec" = "${pkgs.ghostty-bin}/Applications/Ghostty.app";
         "terminal.integrated.cursorBlinking" = true;
         "terminal.integrated.cursorStyle" = "line";
         "terminal.integrated.customGlyphs" = true;

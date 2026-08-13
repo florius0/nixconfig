@@ -15,7 +15,6 @@
     git-worktree-switcher
     glow
     grpcurl
-    iterm2
     jira-cli-go
     lazygit
     pandoc
