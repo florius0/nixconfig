@@ -22,7 +22,8 @@ let
     optionalString
     ;
 
-  ollamaPackage = if acceleration == null then package else package.override { inherit acceleration; };
+  ollamaPackage =
+    if acceleration == null then package else package.override { inherit acceleration; };
 
   renderScalar =
     value:

@@ -32,5 +32,4 @@
     NSAutomaticSpellingCorrectionEnabled = false;
     NSAutomaticInlinePredictionEnabled = true;
   };
-
 }

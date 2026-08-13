@@ -8,5 +8,4 @@
     EnableStandardClickToShowDesktop = false;
     EnableTiledWindowMargins = false;
   };
-
 }

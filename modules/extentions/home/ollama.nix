@@ -25,7 +25,13 @@ let
   ];
 
   modelLoader = pkgs.callPackage ../../../packages/ollama-model-loader/builder.nix {
-    inherit (cfg) package acceleration host port loadModels;
+    inherit (cfg)
+      package
+      acceleration
+      host
+      port
+      loadModels
+      ;
     cleanup = cfg.onActivation.cleanup;
   };
 

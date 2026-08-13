@@ -1,4 +1,9 @@
-{ lib, writeTextFile, role ? [ ], model ? [ ] }:
+{
+  lib,
+  writeTextFile,
+  role ? [ ],
+  model ? [ ],
+}:
 
 let
   prefix = "?";
@@ -9,13 +14,15 @@ in
 writeTextFile {
   name = "omp-shell-zsh-integration";
   destination = "/share/omp-shell/omp-shell.zsh";
-  text = lib.concatStringsSep "\n" (
-    [
-      (alias prefix "omp -p")
-      (alias "${prefix}c" "omp --continue")
-      (alias "${prefix}continue" "omp --continue")
-    ]
-    ++ modelAliases
-    ++ roleAliases
-  ) + "\n";
+  text =
+    lib.concatStringsSep "\n" (
+      [
+        (alias prefix "omp -p")
+        (alias "${prefix}c" "omp --continue")
+        (alias "${prefix}continue" "omp --continue")
+      ]
+      ++ modelAliases
+      ++ roleAliases
+    )
+    + "\n";
 }

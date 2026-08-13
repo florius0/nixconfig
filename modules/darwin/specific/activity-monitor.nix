@@ -7,5 +7,4 @@
     SortColumn = "CPUUsage";
     SortDirection = 0;
   };
-
 }

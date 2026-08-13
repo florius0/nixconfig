@@ -1,4 +1,9 @@
-{ config, flake, pkgs, ... }:
+{
+  config,
+  flake,
+  pkgs,
+  ...
+}:
 
 let
   ompShell = pkgs.callPackage ../../packages/omp-shell {
@@ -64,10 +69,12 @@ in
         unset __github_token
       fi
 
-      source "${flake.self.packages.${pkgs.stdenv.hostPlatform.system}.zsh-fzf-search}/share/zsh-fzf-search/search-widgets.zsh"
+      source "${
+        flake.self.packages.${pkgs.stdenv.hostPlatform.system}.zsh-fzf-search
+      }/share/zsh-fzf-search/search-widgets.zsh"
       source "${ompShell}/share/omp-shell/omp-shell.zsh"
       # Make Cmd+Backspace delete from cursor to line start.
       bindkey -M emacs '^U' backward-kill-line
     '';
-};
+  };
 }

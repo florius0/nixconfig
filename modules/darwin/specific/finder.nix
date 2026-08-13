@@ -27,5 +27,4 @@
     GroupBy = "Kind";
     IconViewSettings.arrangeBy = "dateAdded";
   };
-
 }

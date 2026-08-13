@@ -57,6 +57,7 @@ in
     # All users can add Nix caches.
     nix.settings.trusted-users = [
       "root"
-    ] ++ config.myusers;
+    ]
+    ++ config.myusers;
   };
 }
