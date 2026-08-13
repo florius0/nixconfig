@@ -62,6 +62,7 @@ in
       # Utility Tools
       "anydesk"
       "macs-fan-control"
+      "middleclick"
 
       # Entertainment Tools
       "transmission"
@@ -74,7 +75,7 @@ in
       "qlcolorcode"
       "qlmarkdown"
       "qlstephen"
-      "qlvideo"
+      "quicklook-video"
       "quicklook-json"
       "quicklookase"
     ];

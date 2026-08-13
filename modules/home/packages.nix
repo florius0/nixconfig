@@ -34,8 +34,8 @@
     bun
     delve
     dotnet-sdk
-    elixir
-    erlang
+    beamPackages.elixir
+    beamPackages.erlang
     go
     livebook
     nixfmt
