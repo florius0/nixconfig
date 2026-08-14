@@ -57,7 +57,6 @@
       notify-on-command-finish-after = "1s";
       link-previews = true;
       macos-titlebar-style = "tabs";
-      macos-option-as-alt = "left";
       auto-update = "off";
       confirm-close-surface = true;
       working-directory = "home";
