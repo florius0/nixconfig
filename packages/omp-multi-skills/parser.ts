@@ -3,6 +3,11 @@ export interface SkillReferenceParse {
   text: string;
 }
 
+export function filterKnownSkillNames(names: readonly string[], knownNames: Iterable<string>): string[] {
+  const known = new Set(knownNames);
+  return names.filter(name => known.has(name));
+}
+
 const SKILL_NAME = /[a-z][a-z0-9-]*/;
 const SKILL_URI_PREFIX = "skill://";
 

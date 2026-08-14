@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { parseSkillReferences } from "./parser";
+import { filterKnownSkillNames, parseSkillReferences } from "./parser";
 
 describe("parseSkillReferences", () => {
   test("keeps first occurrence order and deduplicates", () => {
@@ -30,6 +30,10 @@ describe("parseSkillReferences", () => {
 
   test("reports syntactically valid unknown names for exact resolution", () => {
     expect(parseSkillReferences("$does-not-exist fix this").names).toEqual(["does-not-exist"]);
+  });
+
+  test("filters unknown references so they remain regular text", () => {
+    expect(filterKnownSkillNames(["known", "unknown"], ["known"])).toEqual(["known"]);
   });
 
   test("expands skill:// URI references like $ references", () => {

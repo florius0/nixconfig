@@ -5,7 +5,7 @@ import {
   getActiveSkills,
 } from "@oh-my-pi/pi-coding-agent/extensibility/skills";
 import { SKILL_PROMPT_MESSAGE_TYPE } from "@oh-my-pi/pi-coding-agent/session/messages";
-import { parseSkillReferences } from "./parser";
+import { filterKnownSkillNames, parseSkillReferences } from "./parser";
 
 type Skill = ReturnType<typeof getActiveSkills>[number];
 
@@ -91,7 +91,7 @@ export default function multiSkills(pi: ExtensionAPI): void {
     ctx.ui.addAutocompleteProvider((current) => withSkillAutocomplete(current, getActiveSkills));
   });
 
-  pi.on("input", async (event, ctx) => {
+  pi.on("input", async event => {
     const parsed = parseSkillReferences(event.text);
     if (parsed.names.length === 0) {
       return parsed.text === event.text ? undefined : { text: parsed.text };
@@ -99,14 +99,10 @@ export default function multiSkills(pi: ExtensionAPI): void {
 
     const skills = getActiveSkills();
     const byName = new Map(skills.map(skill => [skill.name, skill]));
-    const unknown = parsed.names.filter(name => !byName.has(name));
-    if (unknown.length > 0) {
-      ctx.ui.notify(`Unknown skill: ${unknown.join(", ")}`, "error");
-      return { handled: true };
-    }
+    const knownNames = filterKnownSkillNames(parsed.names, byName.keys());
 
     const built = await Promise.all(
-      parsed.names.map(async name => {
+      knownNames.map(async name => {
         const skill = byName.get(name);
         if (!skill) throw new Error(`Unknown skill: ${name}`);
         const prompt = await buildSkillPromptMessage(skill, "", "user");
