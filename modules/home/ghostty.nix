@@ -52,7 +52,7 @@
       cursor-style = "bar";
       cursor-style-blink = true;
       cursor-click-to-move = true;
-      notify-on-command-finish = "always";
+      notify-on-command-finish = "unfocused";
       notify-on-command-finish-action = "notify";
       notify-on-command-finish-after = "1s";
       link-previews = true;
