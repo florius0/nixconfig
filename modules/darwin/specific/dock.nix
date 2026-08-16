@@ -23,7 +23,6 @@
     persistent-apps = [
       # System & Hardware
       { app = "/System/Applications/Utilities/Activity Monitor.app"; }
-      { app = "/Applications/Audio Hijack.app"; }
 
       # Spacer
       { spacer.small = true; }

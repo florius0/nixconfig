@@ -5,6 +5,9 @@
   #
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
+    # Window management
+    aerospace
+
     # General packages for development and system management
     appcleaner
     automake

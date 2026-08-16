@@ -35,6 +35,7 @@
     };
 
     settings = {
+      auto-update = "off";
       font-family = "FiraCode Nerd Font Mono";
       font-size = 12;
       font-feature = "calt, liga, dlig";
@@ -57,7 +58,6 @@
       notify-on-command-finish-after = "1s";
       link-previews = true;
       macos-titlebar-style = "tabs";
-      auto-update = "off";
       confirm-close-surface = true;
       working-directory = "home";
       copy-on-select = "clipboard";
