@@ -53,6 +53,8 @@
     shfmt
     tinymist
     typst
+    plantuml-c4
+    plantuml-server
     virtualenv
 
     # Editors

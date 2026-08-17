@@ -876,6 +876,10 @@
           "editor.defaultFormatter" = "yzhang.markdown-all-in-one";
         };
 
+        ## PlantUML
+        "plantuml.render" = "PlantUMLServer";
+        "plantuml.server" = "http://127.0.0.1:18765/plantuml";
+
         ## OpenAPI
         "openapi.defaultPreviewRenderer" = "redoc";
 
