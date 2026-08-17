@@ -58,6 +58,7 @@ in
 
       # AI desktop apps
       "claude"
+      "codex-app"
 
       # Encryption and security tools
       "openvpn-connect"
