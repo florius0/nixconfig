@@ -56,6 +56,9 @@ in
       "orbstack"
       "hammerspoon"
 
+      # AI desktop apps
+      "claude"
+
       # Encryption and security tools
       "openvpn-connect"
 
