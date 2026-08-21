@@ -8,7 +8,7 @@
 
 let
   username = config.me.username;
-  homeDir = if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
+  homeDir = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/${username}" else "/home/${username}";
 in
 {
   options.me = {
@@ -51,7 +51,8 @@ in
 
     applicationSupport = lib.mkOption {
       type = lib.types.nullOr lib.types.path;
-      default = if pkgs.stdenv.isDarwin then "${homeDir}/Library/Application Support" else null;
+      default =
+        if pkgs.stdenv.hostPlatform.isDarwin then "${homeDir}/Library/Application Support" else null;
       description = "Application Support dir (macOS only)";
     };
   };

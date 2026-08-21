@@ -6,7 +6,7 @@
 }:
 
 {
-  home.activation.elixirAssociations = lib.mkIf pkgs.stdenv.isDarwin (
+  home.activation.elixirAssociations = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin (
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${pkgs.duti}/bin/duti -s com.microsoft.VSCode exs all
     ''

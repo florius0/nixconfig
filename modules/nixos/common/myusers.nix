@@ -41,7 +41,7 @@ in
       mapListToAttrs config.myusers (
         name:
         let
-          homeDir = if pkgs.stdenv.isDarwin then "/Users/${name}" else "/home/${name}";
+          homeDir = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/${name}" else "/home/${name}";
         in
         {
           home = homeDir;
