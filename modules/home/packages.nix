@@ -116,6 +116,7 @@
     jq
     lf
     parallel
+    pv
     ripgrep
     smartmontools
     speedtest-cli
