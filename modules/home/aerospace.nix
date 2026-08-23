@@ -202,6 +202,18 @@
           run = "move-node-to-workspace 6";
         }
         {
+          "if" = "test %{app-bundle-id} = com.valvesoftware.steam";
+          run = "move-node-to-workspace 6";
+        }
+        {
+          "if" = "test %{app-bundle-id} = net.battle.app";
+          run = "move-node-to-workspace 6";
+        }
+        {
+          "if" = "test %{app-bundle-id} = com.gaijinent.WarThunder";
+          run = "move-node-to-workspace 6";
+        }
+        {
           "if" = "test %{app-bundle-id} = com.apple.logic10";
           run = "move-node-to-workspace 7";
         }
