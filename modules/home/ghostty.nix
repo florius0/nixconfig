@@ -65,7 +65,6 @@
       mouse-hide-while-typing = false;
       image-storage-limit = 320000000;
       keybind = [
-        "global:ctrl+space=toggle_visibility"
         "super+r=text:\\x0c"
         "super+d=new_split:right"
         "super+shift+d=new_split:down"

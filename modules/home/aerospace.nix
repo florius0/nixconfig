@@ -55,6 +55,29 @@
         alt-shift-k = "move up";
         alt-shift-l = "move right";
 
+        ctrl-space = ''
+          exec-and-forget
+                    app_id=com.mitchellh.ghostty
+                    frontmost=$(osascript -e 'tell application "System Events" to get bundle identifier of first application process whose frontmost is true')
+                    if [ "$frontmost" = "$app_id" ]; then
+                      osascript -e 'tell application "System Events" to set visible of first application process whose bundle identifier is "com.mitchellh.ghostty" to false'
+                      exit
+                    fi
+
+                    if [ "$(${pkgs.aerospace}/bin/aerospace list-windows --monitor all --app-bundle-id "$app_id" --count)" -gt 0 ]; then
+                      osascript -e 'tell application "System Events" to set visible of first application process whose bundle identifier is "com.mitchellh.ghostty" to false'
+                    fi
+
+                    workspace=$(${pkgs.aerospace}/bin/aerospace list-workspaces --focused)
+                    ${pkgs.aerospace}/bin/aerospace list-windows --monitor all --app-bundle-id "$app_id" --format "%{window-id}" |
+                    while IFS= read -r window_id; do
+                      ${pkgs.aerospace}/bin/aerospace layout --window-id "$window_id" floating
+                      ${pkgs.aerospace}/bin/aerospace move-node-to-workspace --window-id "$window_id" "$workspace"
+                      ${pkgs.aerospace}/bin/aerospace layout --window-id "$window_id" floating
+                    done
+                    open -b "$app_id"
+        '';
+
         alt-f = [
           "layout floating tiling"
           ''
