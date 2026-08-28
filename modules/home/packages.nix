@@ -81,6 +81,7 @@
     exiftool
     ffmpeg
     imagemagick
+    shottr
 
     # Other media packages
     dejavu_fonts
