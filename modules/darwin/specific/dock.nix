@@ -44,7 +44,7 @@
       # Spacer
       { spacer.small = true; }
 
-      # AI
+      # AI (Nix-managed unified ChatGPT/Codex app)
       { app = "${pkgs.chatgpt}/Applications/ChatGPT.app"; }
 
       # Browsers
