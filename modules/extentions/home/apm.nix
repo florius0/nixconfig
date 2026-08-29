@@ -147,7 +147,6 @@ in
       (mkIf hasSkillsTarget {
         ".agents/skills" = {
           source = "${bundle}/.agents/skills";
-          recursive = true;
         };
       })
       (mkIf hasCodexTarget {
