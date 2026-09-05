@@ -13,6 +13,7 @@
 # make sense supplied by the `programs.apm` home-manager module.
 let
   inherit (lib)
+    concatMapStringsSep
     concatStringsSep
     mapAttrsToList
     optionalString
@@ -55,7 +56,7 @@ let
     name = "nix-managed-agent-environment";
     version = "1.0.0";
     inherit targets;
-    dependencies.apm = map (package: { path = package.root; }) normalizedPackages;
+    dependencies.apm = map (package: { path = "./sources/${package.name}"; }) normalizedPackages;
   };
 in
 pkgs.runCommand "nix-managed-apm-bundle"
@@ -67,7 +68,11 @@ pkgs.runCommand "nix-managed-apm-bundle"
 
     work="$TMPDIR/apm-work"
     home="$TMPDIR/home"
-    mkdir -p "$work" "$home" "$TMPDIR/cache"
+    mkdir -p "$work/sources" "$home" "$TMPDIR/cache"
+    ${concatMapStringsSep "\n" (package: ''
+      cp -R ${lib.escapeShellArg package.root} "$work/sources/"${lib.escapeShellArg package.name}
+      chmod -R u+rwX "$work/sources/"${lib.escapeShellArg package.name}
+    '') normalizedPackages}
     export HOME="$home"
     export XDG_CONFIG_HOME="$home/.config"
     export XDG_DATA_HOME="$home/.local/share"

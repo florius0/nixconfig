@@ -9,22 +9,6 @@ let
     hash = "sha256-eoSnNEQENmmqCpZ6E2h9OV1KCjVi1eEo9q9RAkpDWQ4=";
   };
 
-  mattSkillsWithDiagnosingAndWriting = {
-    type = "github";
-    owner = "mattpocock";
-    repo = "skills";
-    rev = "6a62d72ab1de2cdaee548a9117664f4b5452995c";
-    hash = "sha256-SzToJfduRFhG8oB+okQlU2MtExnw8KvMR/P8JMoe6Lo=";
-  };
-
-  ponytail = {
-    type = "github";
-    owner = "DietrichGebert";
-    repo = "ponytail";
-    rev = "2ed6c52c9d7e5e56942508591085fd45dea277d3";
-    hash = "sha256-bGdXvzhWPwGdz3T2Yh2h6lf+3PBRFAfdBxP5pESmCHI=";
-  };
-
   caveman = {
     type = "github";
     owner = "JuliusBrussee";
@@ -41,17 +25,32 @@ let
     hash = "sha256-fnl+HbPL2qD5Zgz8a1NctjFJSqu6UsyHJAhQMLQNXXc=";
   };
 
-  diagnosingBugsSource = pkgs.fetchFromGitHub {
-    owner = "mattpocock";
-    repo = "skills";
-    rev = mattSkillsWithDiagnosingAndWriting.rev;
-    hash = mattSkillsWithDiagnosingAndWriting.hash;
-  };
+  superpowersSkills = [
+    "brainstorming"
+    "dispatching-parallel-agents"
+    "executing-plans"
+    "finishing-a-development-branch"
+    "receiving-code-review"
+    "requesting-code-review"
+    "subagent-driven-development"
+    "systematic-debugging"
+    "test-driven-development"
+    "using-git-worktrees"
+    "using-superpowers"
+    "verification-before-completion"
+    "writing-plans"
+    "writing-skills"
+  ];
 
-  diagnosingBugsSkill = pkgs.runCommand "apm-diagnosing-bugs-skill" { } ''
-    mkdir -p "$out/diagnosing-bugs"
-    cp "${diagnosingBugsSource}/skills/engineering/diagnosing-bugs/SKILL.md" "$out/diagnosing-bugs/SKILL.md"
-  '';
+  superpowersPackages = builtins.listToAttrs (
+    map (name: {
+      inherit name;
+      value = {
+        source = superpowers;
+        path = "skills/${name}";
+      };
+    }) superpowersSkills
+  );
 
   cavemanCompressSource = pkgs.fetchFromGitHub {
     owner = "JuliusBrussee";
@@ -76,10 +75,6 @@ in
 
     packages = {
       # Behavior
-      ponytail = {
-        source = ponytail;
-        path = "skills/ponytail";
-      };
       caveman = {
         source = caveman;
         path = "skills/caveman";
@@ -103,36 +98,10 @@ in
         path = "skills/engineering/zoom-out";
       };
 
-      # Engineering discipline
-      diagnosing-bugs = {
-        src = diagnosingBugsSkill;
-        path = "diagnosing-bugs";
-      };
-      verification-before-completion = {
-        source = superpowers;
-        path = "skills/verification-before-completion";
-      };
-
       # Session workflow
       handoff = {
         source = mattSkills;
         path = "skills/productivity/handoff";
-      };
-
-      # Meta
-      writing-great-skills = {
-        source = mattSkillsWithDiagnosingAndWriting;
-        path = "skills/productivity/writing-great-skills";
-      };
-
-      # Ponytail extras
-      ponytail-review = {
-        source = ponytail;
-        path = "skills/ponytail-review";
-      };
-      ponytail-audit = {
-        source = ponytail;
-        path = "skills/ponytail-audit";
       };
 
       # Caveman extras
@@ -141,6 +110,7 @@ in
         path = "caveman-compress";
       };
 
-    };
+    }
+    // superpowersPackages;
   };
 }
