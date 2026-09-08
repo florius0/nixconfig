@@ -546,11 +546,8 @@
         "search.defaultViewMode" = "tree";
 
         # Copilot & AI Features
-        "chat.agent.enabled" = true;
-        "chat.extensionTools.enabled" = true;
-        "chat.agentHost.enabled" = true;
+        "chat.disableAIFeatures" = true;
         "editor.inlineSuggest.enabled" = false;
-        "github.copilot.enable" = false;
 
         # Programming Language Settings
         ## Kubernetes & Helm
