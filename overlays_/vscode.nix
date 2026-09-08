@@ -33,14 +33,6 @@ final: prev: {
           .monaco-workbench .part.statusbar>.items-container>.statusbar-item.left.first-visible-item {
             padding-left: 0;
           }
-          /* Show the host button again and make it as wide as the .activitybar */
-          .statusbar #status\.host {
-            display: block !important;
-            width: calc(var(--activity-bar-action-size) - 1px);
-          }
-          .statusbar #status\.host .codicon {
-            margin: 0 auto;
-          }
           /* Make squiggly error, hint, info, and warning rounded */
           .monaco-editor .squiggly-error::before,
           .monaco-editor .squiggly-hint::before,
