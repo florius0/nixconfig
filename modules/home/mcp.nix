@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  flake,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   mcpServers = {
@@ -52,6 +57,7 @@ in
 
   programs.codex = {
     enable = true;
+    package = flake.inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex;
     enableMcpIntegration = false;
   };
 
