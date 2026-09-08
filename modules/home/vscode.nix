@@ -827,7 +827,6 @@
         "terminal.integrated.lineHeight" = 1.23;
 
         # Git & GitHub
-        "diff.mnemonicPrefix" = true;
         "diffEditor.ignoreTrimWhitespace" = false;
         "git.autofetch" = true;
         "git.confirmSync" = false;
@@ -841,7 +840,7 @@
         "scm.diffDecorationsIgnoreTrimWhitespace" = false;
 
         # Search
-        "search.tree.defaultViewMode" = "tree";
+        "search.defaultViewMode" = "tree";
 
         # Copilot & AI Features
         "chat.agent.enabled" = true;

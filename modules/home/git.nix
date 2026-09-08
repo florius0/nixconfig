@@ -49,6 +49,7 @@
       user.email = config.me.email;
 
       core.autocrlf = "input";
+      diff.mnemonicPrefix = true;
       help.autocorrect = 1;
       init.defaultBranch = "main";
       pull.rebase = true;
