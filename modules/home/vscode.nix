@@ -618,7 +618,46 @@
           key = "cmd+b";
           command = "-workbench.action.toggleSidebarVisibility";
         }
-      ];
+        {
+          key = "cmd+9";
+          command = "workbench.action.lastEditorInGroup";
+        }
+        {
+          key = "ctrl+9";
+          command = "workbench.action.focusLastEditorGroup";
+        }
+        {
+          key = "ctrl+tab";
+          command = "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup";
+        }
+        {
+          key = "ctrl+shift+tab";
+          command = "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup";
+        }
+      ]
+      ++ lib.concatLists (
+        lib.imap1
+          (index: group: [
+            {
+              key = "cmd+${toString index}";
+              command = "workbench.action.openEditorAtIndex${toString index}";
+            }
+            {
+              key = "ctrl+${toString index}";
+              command = "workbench.action.focus${group}EditorGroup";
+            }
+          ])
+          [
+            "First"
+            "Second"
+            "Third"
+            "Fourth"
+            "Fifth"
+            "Sixth"
+            "Seventh"
+            "Eighth"
+          ]
+      );
     };
   };
 }
