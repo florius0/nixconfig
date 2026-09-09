@@ -104,6 +104,17 @@ in
         path = "skills/productivity/handoff";
       };
 
+      simplify = {
+        source = {
+          type = "github";
+          owner = "bholmesdev";
+          repo = "skills";
+          rev = "44da67bd1896cdafced6f60573b62ae71d18ef2a";
+          hash = "sha256-khT4YgpxH8rgoFrNifbhkqhKKqVCCb1eG73B+/NdM8U=";
+        };
+        path = "skills/simplify";
+      };
+
       # Caveman extras
       caveman-compress = {
         src = cavemanCompressSkill;
