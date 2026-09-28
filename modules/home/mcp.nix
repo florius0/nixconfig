@@ -13,24 +13,12 @@ let
     };
   };
 
-  codexMcpConfig = (pkgs.formats.toml { }).generate "codex-mcp-config" {
-    mcp_servers = mcpServers;
-  };
-
   claudeMcpConfig = (pkgs.formats.json { }).generate "claude-mcp-config" {
     mcpServers = lib.mapAttrs (_: server: server // { type = "stdio"; }) mcpServers;
   };
 in
 {
   home.activation.configureWritableMcp = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
-    codex_config="$HOME/.codex/config.toml"
-    if [ -L "$codex_config" ]; then
-      rm "$codex_config"
-    fi
-    if [ ! -e "$codex_config" ]; then
-      install -Dm644 ${codexMcpConfig} "$codex_config"
-    fi
-
     claude_config="$HOME/.claude.json"
     claude_tmp="$(mktemp "$HOME/.claude.json.XXXXXX")"
     if [ -e "$claude_config" ]; then
@@ -58,8 +46,25 @@ in
   programs.codex = {
     enable = true;
     package = flake.inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex;
-    enableMcpIntegration = false;
+    enableMcpIntegration = true;
+
+    settings = {
+      features.context_management.experimental_mode = true;
+
+      desktop = {
+        followUpQueueMode = "steer";
+        realtimeVoiceScreenContextEnabled = true;
+        show-context-window-usage = true;
+        conversationDetailMode = "STEPS_PROSE";
+        mac-menu-bar-enabled = false;
+
+        open-in-target-preferences.global = "terminal";
+      };
+    };
   };
+
+  # nix-darwin installs the generated TOML in /etc/codex instead.
+  home.file.".codex/config.toml".enable = false;
 
   programs.claude-code = {
     enable = true;
