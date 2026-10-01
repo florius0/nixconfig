@@ -1,26 +1,20 @@
 final: prev:
 let
-  version = "0.32.5";
+  version = "0.34.4";
   darwinOllama = prev.fetchurl {
     url = "https://github.com/ollama/ollama/releases/download/v${version}/ollama-darwin.tgz";
-    hash = "sha256-V4ndA3qGrbMoxywR/EXmxVhFLQfltQgUqL23sPvbzYE=";
+    hash = "sha256-6cj92qtfSPR/LErj0j0HMvUYJBcSU1P67tIYjjSiJ5k=";
   };
 in
 if prev.stdenv.hostPlatform.system == "aarch64-darwin" then
   {
-    ollama = prev.ollama.overrideAttrs (old: {
+    ollama = final.stdenvNoCC.mkDerivation {
+      pname = "ollama";
       inherit version;
       src = darwinOllama;
 
-      pname = "ollama";
-      dontUnpack = true;
-      dontConfigure = true;
-      dontBuild = true;
-      dontFixup = true;
       nativeBuildInputs = [ final.gnutar ];
       phases = [ "installPhase" ];
-      preInstall = "";
-      postInstall = "";
 
       installPhase = ''
         unpacked=$(mktemp -d)
@@ -55,13 +49,14 @@ if prev.stdenv.hostPlatform.system == "aarch64-darwin" then
 
       '';
 
-      meta = old.meta // {
+      meta = prev.ollama.meta // {
         description = "Get up and running with large language models";
         homepage = "https://ollama.com";
+        changelog = "https://github.com/ollama/ollama/releases/tag/v${version}";
         sourceProvenance = [ final.lib.sourceTypes.binaryNativeCode ];
         platforms = [ "aarch64-darwin" ];
       };
-    });
+    };
   }
 else
   {
