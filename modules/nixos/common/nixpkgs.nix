@@ -4,9 +4,7 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowBroken = true;
       allowInsecure = false;
-      allowUnsupportedSystem = true;
     };
 
     overlays = # Apply each overlay found in the /overlays directory
