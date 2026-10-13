@@ -575,7 +575,10 @@
 
         ## Shell
 
-        "shellformat.path" = "${lib.getExe pkgs.shfmt}";
+        "shellformat.path" = lib.getExe pkgs.shfmt;
+
+        ## Swift
+        "swift.sourcekit-lsp.serverPath" = lib.getExe pkgs.sourcekit-lsp;
 
         ## XML
 
