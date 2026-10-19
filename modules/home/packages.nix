@@ -83,6 +83,7 @@
     ffmpeg
     imagemagick
     shottr
+    solidcraft
 
     # Other media packages
     dejavu_fonts
