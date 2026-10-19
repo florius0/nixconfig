@@ -35,6 +35,7 @@
     # Programming languages and tooling
     bun
     delve
+    dexter
     dotnet-sdk
     beamPackages.elixir
     beamPackages.erlang

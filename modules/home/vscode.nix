@@ -82,10 +82,10 @@
           sha256 = "sha256-xU1v1NL1A6EDG+kv8Ri16xuZeQdRFzTnMOCLGpCmlg8=";
         }
         {
-          publisher = "ExpertLSP";
-          name = "expert";
-          version = "0.6.0";
-          sha256 = "sha256-1O3GVHSiN3U8cPCa0hRFiJ24c1dJsRZURamsPmsaIy0=";
+          publisher = "remoteoss";
+          name = "dexter-lsp";
+          version = "0.3.0";
+          sha256 = "sha256-BH/KVYqBNH+01swb1Hn0lSy7lfjU57LPLaN3GSDGOK0=";
         }
         {
           publisher = "foxundermoon";
@@ -537,6 +537,19 @@
         "editor.inlineSuggest.enabled" = false;
 
         # Programming Language Settings
+        ## Elixir
+        "dexter.binary" = "${pkgs.dexter}/bin/dexter";
+        "dexter.autoInstall" = false;
+        "dexter.autoUpdate" = false;
+
+        "[elixir]" = {
+          "editor.defaultFormatter" = "remoteoss.dexter-lsp";
+        };
+
+        "[phoenix-heex]" = {
+          "editor.defaultFormatter" = "remoteoss.dexter-lsp";
+        };
+
         ## Kubernetes & Helm
 
         "[helm]" = {
