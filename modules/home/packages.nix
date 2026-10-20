@@ -16,6 +16,7 @@
     git-filter-repo
     git-lfs
     git-worktree-switcher
+    glab
     glow
     grpcurl
     jira-cli-go
