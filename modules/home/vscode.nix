@@ -428,6 +428,7 @@
         "files.exclude" = {
           "**/*.meta" = true;
         };
+        "files.trimTrailingWhitespace" = true;
         "security.workspace.trust.enabled" = false;
         "window.commandCenter" = false;
         "window.customTitleBarVisibility" = "never";
