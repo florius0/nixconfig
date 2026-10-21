@@ -613,6 +613,27 @@
       };
 
       keybindings = [
+        # Reserve Ctrl+Alt+Shift (Caps Lock) for AeroSpace.
+        {
+          key = "ctrl+alt+shift+j";
+          command = "-notebook.cell.joinAbove";
+        }
+        {
+          key = "ctrl+alt+shift+`";
+          command = "-workbench.action.terminal.newInNewWindow";
+        }
+        {
+          key = "ctrl+alt+shift+r";
+          command = "-sessions.showSessionsPicker.navigatePrevious";
+        }
+        {
+          key = "ctrl+alt+shift+\\";
+          command = "-jupyter.selectCell";
+        }
+        {
+          key = "ctrl+alt+shift+s";
+          command = "-java.action.doCleanup";
+        }
         {
           key = "cmd+b";
           command = "workbench.action.toggleSidebarVisibility";
