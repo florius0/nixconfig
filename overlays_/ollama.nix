@@ -1,9 +1,9 @@
 final: prev:
 let
-  version = "0.34.4";
+  version = "0.40.6";
   darwinOllama = prev.fetchurl {
     url = "https://github.com/ollama/ollama/releases/download/v${version}/ollama-darwin.tgz";
-    hash = "sha256-6cj92qtfSPR/LErj0j0HMvUYJBcSU1P67tIYjjSiJ5k=";
+    hash = "sha256-srVUNIZaZo3stJQRDX/ZcO7T7MiDe+KHL2csy7ld+XQ=";
   };
 in
 if prev.stdenv.hostPlatform.system == "aarch64-darwin" then

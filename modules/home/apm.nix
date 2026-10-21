@@ -5,24 +5,24 @@ let
     type = "github";
     owner = "mattpocock";
     repo = "skills";
-    rev = "bc4cf903ff4855ce23199a8dd3bf98b3dbd7ad71";
-    hash = "sha256-eoSnNEQENmmqCpZ6E2h9OV1KCjVi1eEo9q9RAkpDWQ4=";
+    rev = "5beb35b040e3de97e54fa9e386d7e42d15c295c2";
+    hash = "sha256-2FKfe3/Fwc4MmwBLa+d/oQW4/gtYIssdWapy2MPd39I=";
   };
 
   caveman = {
     type = "github";
     owner = "JuliusBrussee";
     repo = "caveman";
-    rev = "309834233183478e6fd7800d26e1fbaa6210274e";
-    hash = "sha256-jm5/xMkG/WpF8OGW2mkhXA9xVS1LBE2j9iwAiJzPXs0=";
+    rev = "bad48a0e1df55e05e3f52249afa35ecc1909ee76";
+    hash = "sha256-G2i54t+5fFCRI3lXP6fXV9oPWwIKklmx6F3EfrqntBY=";
   };
 
   superpowers = {
     type = "github";
     owner = "obra";
     repo = "superpowers";
-    rev = "44c9b2d6e889982ac18c27d05a19fefe335194e1";
-    hash = "sha256-fnl+HbPL2qD5Zgz8a1NctjFJSqu6UsyHJAhQMLQNXXc=";
+    rev = "b739a8af570e10a95898f2bdf6cec97467fa6c12";
+    hash = "sha256-hy6aavA88hoqdUsV7vCTa0nV4YooZDSBPPPX6Jb7ZCs=";
   };
 
   superpowersSkills = [
@@ -93,10 +93,6 @@ in
         source = mattSkills;
         path = "skills/engineering/grill-with-docs";
       };
-      zoom-out = {
-        source = mattSkills;
-        path = "skills/engineering/zoom-out";
-      };
 
       # Session workflow
       handoff = {
@@ -109,8 +105,8 @@ in
           type = "github";
           owner = "bholmesdev";
           repo = "skills";
-          rev = "44da67bd1896cdafced6f60573b62ae71d18ef2a";
-          hash = "sha256-khT4YgpxH8rgoFrNifbhkqhKKqVCCb1eG73B+/NdM8U=";
+          rev = "81be8791eee5a43f016efcb9230bdceca0ff7e77";
+          hash = "sha256-Gaz6gh/+v9Fx69NfCEAm49n1MzIhHpQJoYrqWdMM/h4=";
         };
         path = "skills/simplify";
       };
