@@ -9,7 +9,6 @@
     aerospace
 
     # General packages for development and system management
-    appcleaner
     automake
     cmake
     gh
