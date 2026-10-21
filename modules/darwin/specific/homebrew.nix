@@ -63,6 +63,7 @@ in
 
       # Utility Tools
       "anydesk"
+      "karabiner-elements"
       "macs-fan-control"
       "middleclick"
 
