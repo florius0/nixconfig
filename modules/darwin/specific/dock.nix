@@ -23,6 +23,7 @@
     persistent-apps = [
       # System & Hardware
       { app = "/System/Applications/Utilities/Activity Monitor.app"; }
+      { app = "/Applications/OrbStack.app"; }
 
       # Spacer
       { spacer.small = true; }
@@ -61,7 +62,6 @@
       { app = "/Applications/Xcode.app"; }
       { app = "${pkgs.vscode}/Applications/Visual Studio Code.app"; }
       { app = "${pkgs.ghostty-bin}/Applications/Ghostty.app"; }
-      { app = "/Applications/OrbStack.app"; }
 
       # Spacer
       { spacer.small = true; }
