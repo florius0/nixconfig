@@ -82,6 +82,13 @@
           sha256 = "sha256-xU1v1NL1A6EDG+kv8Ri16xuZeQdRFzTnMOCLGpCmlg8=";
         }
         {
+          publisher = "erlang-language-platform";
+          name = "erlang-language-platform";
+          version = "0.54.0";
+          arch = "darwin-arm64";
+          sha256 = "sha256-HSpG3Xx/dBob0ZqE++Fda0NMr+PkNEYmCuja7WuZkGU=";
+        }
+        {
           publisher = "remoteoss";
           name = "dexter-lsp";
           version = "0.3.0";
@@ -255,12 +262,6 @@
           name = "hexeditor";
           version = "1.11.1";
           sha256 = "sha256-RB5YOp30tfMEzGyXpOwPIHzXqZlRGc+pXiJ3foego7Y=";
-        }
-        {
-          publisher = "pgourlain";
-          name = "erlang";
-          version = "1.2.8";
-          sha256 = "sha256-FtlTwUL6CguxxoVgNQJ7DzUhAYxTOKEhUf8RMsRz0K0=";
         }
         {
           publisher = "phoenixframework";
