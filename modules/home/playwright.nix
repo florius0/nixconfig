@@ -1,13 +1,8 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 {
-  home.activation.playwrightConfiguration = ''
-    export PLAYWRIGHT_BROWSERS_PATH=${pkgs.playwright-driver.browsers}
-    export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
-  '';
+  home.sessionVariables = {
+    PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
+    PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true";
+  };
 }
