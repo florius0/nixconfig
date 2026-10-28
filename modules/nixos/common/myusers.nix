@@ -53,11 +53,5 @@ in
     home-manager.users = mapListToAttrs config.myusers (name: {
       imports = [ (self + /configurations/home/${name}.nix) ];
     });
-
-    # All users can add Nix caches.
-    nix.settings.trusted-users = [
-      "root"
-    ]
-    ++ config.myusers;
   };
 }
