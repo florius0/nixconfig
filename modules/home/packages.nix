@@ -84,6 +84,7 @@
     imagemagick
     shottr
     solidcraft
+    yt-dlp
 
     # Other media packages
     dejavu_fonts
