@@ -82,6 +82,7 @@
     exiftool
     ffmpeg
     imagemagick
+    python3Packages.youtube-transcript-api
     shottr
     solidcraft
     yt-dlp
