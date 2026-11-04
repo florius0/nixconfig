@@ -10,6 +10,8 @@ let
   codexLogDir = "/tmp/codex-${config.home.username}-logs";
 in
 {
+  programs.codex.settings.projects."${config.home.homeDirectory}/Documents".trust_level = "trusted";
+
   home.sessionVariables = {
     # Keep the opt-in TUI session recorder disabled. If it is enabled manually,
     # force its output into /tmp as well.
