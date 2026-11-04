@@ -23,9 +23,6 @@ let
       window_id=''${windows%%$'\n'*}
       ${aerospace} move-node-to-workspace --window-id "$window_id" "$workspace"
       ${aerospace} layout --window-id "$window_id" "$layout"
-      if [ "$workspace" = T ]; then
-        ${aerospace} fullscreen --window-id "$window_id" on
-      fi
       /usr/bin/open -a "$app"
       ${aerospace} focus --window-id "$window_id"
     elif [ "$bundle" = com.apple.finder ]; then
@@ -121,8 +118,8 @@ in
         ctrl-alt-shift-v = "exec-and-forget ${switchWorkspace} V 'Guitar Pro 8' com.arobas-music.guitarpro8 tiling";
         ctrl-alt-shift-x = "exec-and-forget ${switchWorkspace} X Mail com.apple.mail tiling";
         ctrl-alt-shift-z = "exec-and-forget ${switchWorkspace} Z 'Activity Monitor' com.apple.ActivityMonitor tiling";
-        ctrl-alt-shift-w = "exec-and-forget ${switchWorkspace} T Ghostty com.mitchellh.ghostty floating";
-        ctrl-alt-shift-t = "exec-and-forget ${switchWorkspace} T Ghostty com.mitchellh.ghostty floating";
+        ctrl-alt-shift-w = "exec-and-forget ${switchWorkspace} T 'Rex Beta' com.superlogical.rex tiling";
+        ctrl-alt-shift-t = "exec-and-forget ${switchWorkspace} T 'Rex Beta' com.superlogical.rex tiling";
 
         ctrl-alt-shift-cmd-g = "move-node-to-workspace G";
         ctrl-alt-shift-cmd-a = "move-node-to-workspace A";
@@ -299,12 +296,10 @@ in
           ];
         }
         {
-          "if" = "test %{app-bundle-id} = com.mitchellh.ghostty";
-          # Native macOS tabs appear as separate windows to AeroSpace.
+          "if" = "test %{app-bundle-id} = com.superlogical.rex";
           run = [
             "move-node-to-workspace T"
-            "layout floating"
-            "fullscreen on"
+            "layout tiling"
           ];
         }
         {

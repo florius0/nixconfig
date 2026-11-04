@@ -517,7 +517,7 @@
 
         # Terminal Configuration
         "terminal.explorerKind" = "external";
-        "terminal.external.osxExec" = "${pkgs.ghostty-bin}/Applications/Ghostty.app";
+        "terminal.external.osxExec" = "/Applications/Rex Beta.app";
         "terminal.integrated.cursorBlinking" = true;
         "terminal.integrated.cursorStyle" = "line";
         "terminal.integrated.customGlyphs" = true;

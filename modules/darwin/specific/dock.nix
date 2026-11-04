@@ -61,7 +61,7 @@
       # Dev tools
       { app = "/Applications/Xcode.app"; }
       { app = "${pkgs.vscode}/Applications/Visual Studio Code.app"; }
-      { app = "${pkgs.ghostty-bin}/Applications/Ghostty.app"; }
+      { app = "/Applications/Rex Beta.app"; }
 
       # Spacer
       { spacer.small = true; }
