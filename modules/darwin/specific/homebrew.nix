@@ -33,6 +33,7 @@ in
   # Package management via nix-darwin’s Homebrew module
   homebrew = {
     enable = true;
+    greedyCasks = true;
 
     # Keep taps in nix-darwin in sync with nix-homebrew (avoids drift):
     taps = builtins.attrNames config.nix-homebrew.taps;

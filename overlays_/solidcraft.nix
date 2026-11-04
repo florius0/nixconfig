@@ -1,11 +1,11 @@
 final: prev: {
   solidcraft = final.stdenvNoCC.mkDerivation (finalAttrs: {
     pname = "solidcraft";
-    version = "0.16.2";
+    version = "0.30.1";
 
     src = final.fetchurl {
       url = "https://github.com/tangency-labs/solidcraft/releases/download/v${finalAttrs.version}/solidcraft-${finalAttrs.version}-macos-universal.dmg";
-      hash = "sha256-ypNER5yAXjD8T7FhigDmzF9dbXK2Cq06VDdS7R9Xj0M=";
+      hash = "sha256-3PVrgKrKYZW1hU+QA/VkhYDRk13HdABg4ra4hb4gCi0=";
     };
 
     nativeBuildInputs = [ final.undmg ];
@@ -27,7 +27,10 @@ final: prev: {
     meta = {
       description = "Parametric 3D CAD app with a bundled command-line interface";
       homepage = "https://solidcraft.io/";
-      license = with final.lib.licenses; [ mit asl20 ];
+      license = with final.lib.licenses; [
+        mit
+        asl20
+      ];
       mainProgram = "solidcraft-cli";
       platforms = final.lib.platforms.darwin;
       sourceProvenance = [ final.lib.sourceTypes.binaryNativeCode ];
