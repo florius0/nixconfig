@@ -289,10 +289,18 @@ in
         }
         {
           "if" =
-            "test %{app-bundle-id} = com.apple.ActivityMonitor || test %{app-bundle-id} = dev.kdrag0n.MacVirt || test %{app-bundle-id} = org.openvpn.client.app || test %{app-bundle-id} = org.redshieldvpn.redshieldvpn || test %{app-bundle-id} = com.crystalidea.macsfancontrol";
+            "test %{app-bundle-id} = com.apple.ActivityMonitor || test %{app-bundle-id} = dev.kdrag0n.MacVirt || test %{app-bundle-id} = com.crystalidea.macsfancontrol";
           run = [
             "move-node-to-workspace Z"
             "layout tiling"
+          ];
+        }
+        {
+          "if" =
+            "test %{app-bundle-id} = org.openvpn.client.app || test %{app-bundle-id} = org.redshieldvpn.redshieldvpn";
+          run = [
+            "move-node-to-workspace Z"
+            "layout floating"
           ];
         }
         {
