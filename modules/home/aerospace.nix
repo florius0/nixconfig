@@ -200,7 +200,7 @@ in
       on-window-detected = [
         {
           "if" =
-            ''test %{app-bundle-id} = "com.valvesoftware.steam" || test %{app-bundle-id} = "com.valvesoftware.steam.helper" || test %{app-bundle-id} = "net.battle.app" || test %{app-bundle-id} = "unity.Blizzard Entertainment.Hearthstone" || test %{app-bundle-id} = "com.gaijinent.WarThunderDL" || test %{app-bundle-id} = "com.gaijinent.WarThunder" || test %{app-bundle-id} = "org.polymc.PolyMC" || test %{app-bundle-path} ~= "/steamapps/common/" || test %{app-exec-path} ~= "/steamapps/common/" || test %{app-name} ~= "^PolyMC: "'';
+            ''test %{app-bundle-id} = "com.valvesoftware.steam" || test %{app-bundle-id} = "com.valvesoftware.steam.helper" || test %{app-bundle-id} = "com.codeweavers.CrossOver" || test %{app-bundle-id} = "net.battle.app" || test %{app-bundle-id} = "unity.Blizzard Entertainment.Hearthstone" || test %{app-bundle-id} = "com.gaijinent.WarThunderDL" || test %{app-bundle-id} = "com.gaijinent.WarThunder" || test %{app-bundle-id} = "org.polymc.PolyMC" || test %{app-bundle-path} ~= "/steamapps/common/" || test %{app-exec-path} ~= "/steamapps/common/" || test %{app-bundle-path} ~= "/CrossOver[.]app/|/CrossOver/Bottles/|/winetemp-" || test %{app-exec-path} ~= "/CrossOver[.]app/|/CrossOver/Bottles/|/winetemp-" || test %{app-name} ~= "^PolyMC: "'';
           run = [
             "move-node-to-workspace G"
             "layout tiling"
