@@ -11,6 +11,7 @@ let
 in
 {
   programs.codex.settings.projects."${config.home.homeDirectory}/Documents".trust_level = "trusted";
+  programs.codex.settings.tui.alternate_screen = "never";
 
   home.sessionVariables = {
     # Keep the opt-in TUI session recorder disabled. If it is enabled manually,
