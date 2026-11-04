@@ -55,6 +55,15 @@ in
       source "${ompShell}/share/omp-shell/omp-shell.zsh"
       # Make Cmd+Backspace delete from cursor to line start.
       bindkey -M emacs '^U' backward-kill-line
+
+      scroll-screen() {
+        # Scroll visible output into history before redrawing the prompt.
+        zle -I
+        repeat $LINES print
+        printf '\e[H'
+        zle reset-prompt
+      }
+      zle -N clear-screen scroll-screen
     '';
   };
 }
