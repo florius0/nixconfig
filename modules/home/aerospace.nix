@@ -247,7 +247,7 @@ in
           "if" = "test %{app-bundle-id} = com.apple.finder";
           run = [
             "move-node-to-workspace F"
-            "layout floating"
+            "layout tiling"
           ];
         }
         {
