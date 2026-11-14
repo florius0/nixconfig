@@ -483,7 +483,7 @@
         "workbench.iconTheme" = "macos-modern-big-sur-icon-theme";
 
         # Font Configuration
-        "editor.fontFamily" = "'FiraCode Nerd Font', 'SF Mono', Menlo, Monaco, 'Courier New', monospace";
+        "editor.fontFamily" = "FiraCode Nerd Font Mono";
         "editor.fontLigatures" = true;
         "editor.fontSize" = 12;
         "editor.fontWeight" = "normal";
