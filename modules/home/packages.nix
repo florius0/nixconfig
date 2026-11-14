@@ -119,6 +119,7 @@
     iftop
     jq
     lf
+    leaf
     parallel
     pv
     ripgrep
