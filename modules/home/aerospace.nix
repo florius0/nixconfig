@@ -245,10 +245,8 @@ in
         }
         {
           "if" = "test %{app-bundle-id} = com.apple.finder";
-          run = [
-            "move-node-to-workspace F"
-            "layout tiling"
-          ];
+          # Leave Quick Look and other floating Finder dialogs where they opened.
+          run = "test %{window-layout} = floating || move-node-to-workspace F";
         }
         {
           "if" = "test %{app-bundle-id} = com.apple.Music";
